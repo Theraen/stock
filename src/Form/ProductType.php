@@ -2,8 +2,11 @@
 
 namespace App\Form;
 
+use App\Entity\Category;
 use App\Entity\Product;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -24,11 +27,34 @@ class ProductType extends AbstractType
                 'label' => "Quantité",
             ])
             ->add('dlc', DateType::class, [
-                'required' => true,
+                'required' => false,
                 'label' => 'Date Limite de Consomation',
                 'widget' => "single_text",
             ])
-            ->add('category', TextType::class)
+            ->add('capacity', IntegerType::class, [
+                'required' => true,
+                'label' => 'Contenance',
+            ])
+            ->add('unit_measure_capacity', ChoiceType::class, [
+                'required' => true,
+                'label' => 'Unité de mesure',
+                'choices' => [
+                    'Masse' => [
+                        'kg' => 'kg',
+                        'g' => 'g', 
+                    ],
+                    'Volume' => [
+                        'l' => 'l',
+                        'cl' => 'cl',
+                        'ml' => 'ml',
+                    ], 
+                ],
+            ])
+            ->add('category', EntityType::class, [
+                'label' => 'Categorie',
+                'class' => Category::class,
+                "multiple" => false,
+            ])
         ;
     }
 
