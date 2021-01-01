@@ -9,6 +9,10 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
+###< custom ###
+/public/uploads/
+###< custom ###
+
 ###> symfony/phpunit-bridge ###
 .phpunit
 .phpunit.result.cache

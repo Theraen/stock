@@ -19,22 +19,35 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
-    // /**
-    //  * @return Product[] Returns an array of Product objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Product[] Returns an array of Product objects
+     */
+    
+    public function findAllShortDlc()
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+            ->where('DATE_DIFF(p.dlc, CURRENT_DATE()) <= 3')
+            ->andWhere('DATE_DIFF(p.dlc, CURRENT_DATE()) >= 0')
+            ->andWhere('p.shortDlc = 0')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
+        /**
+     * @return Product[] Returns an array of Product objects
+     */
+    
+    public function findAllLimitDlc()
+    {
+        return $this->createQueryBuilder('p')
+            ->where('DATE_DIFF(p.dlc, CURRENT_DATE()) < 0')
+            ->andWhere('p.shortDlc = 0')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
 
     /*
     public function findOneBySomeField($value): ?Product

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+
+
+        <title>{% block title %}Date limite !{% endblock %}</title>
+
+    <body id="page-top">
+
+
+    <p>Produit concerné : {{ vars.name ~ " " ~ vars.capacity ~ vars.unitMeasure }}</p>
+    <p>Quantité : {{ vars.quantity }}</p>
+    <p>DLC : {{ vars.dlc|date("d/m/Y") }}</p>
+    
+    </body>
+</html>

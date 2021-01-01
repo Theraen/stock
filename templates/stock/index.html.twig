@@ -20,14 +20,27 @@
     <div class="row">
     {% for product in products %}
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card">
-                <img src="{{ asset('img/products/beurreDoux.jpeg') }}" alt="" width="100%">
+            <div class="card {% if product.shortDlc == 1 %}bg-gradient-warning text-white{% elseif product.shortDlc == 2 %}bg-gradient-danger text-white{% endif %}">
+                {% if product.started != 0 %}
+                <div class="ribbon">
+                    <span>1 Entamé</span>
+                </div>
+                {% endif %}
+                <img src="{{ asset('uploads/picture/product/' ~ product.pictureStock.picture) }}" alt="" width="100%">
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name  ~ " " ~ product.capacity ~ product.unitMeasureCapacity}}</h5>
                     <p class="card-text">Quantité : {{ product.quantity }}</p>
-                    <a href="{{ path('stock_update_qte', {plusOrMinus: "plus", id: product.id}) }}" class="btn btn-success"><i class="fas fa-plus"></i></a>  
-                        <a href="{{ path('stock_update_qte', {plusOrMinus: "minus", id: product.id}) }}" class="btn btn-danger"><i class="fas fa-{% if product.quantity <= 1 %}trash{% else %}minus{% endif %}"></i></a>
-                    <a href="{{ path('stock_update', {id: product.id}) }}" class="btn btn-warning float-right"><i class="fas fa-edit"></i></a>
+                    {% if product.dlc != NULL %}
+                        <p class="card-text">DLC : {{ product.dlc|date("d/m/Y") }}</p>
+                    {% endif %}
+                    
+                    <a href="{{ path('stock_update_qte', {plusOrMinus: "plus", id: product.id}) }}" class="btn btn-success"><i class="fas fa-plus"></i></a>
+                        {% if product.started == 0 %}
+                            <a href="{{ path('stock_started', {id: product.id}) }}" class="btn btn-success"><i class="fas fa-drumstick-bite"></i></a>
+                        {% else %}
+                            <a href="{{ path('stock_started', {id: product.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                        {% endif %}
+                       <a href="{{ path('stock_update', {id: product.id}) }}" class="btn btn-warning float-right"><i class="fas fa-edit"></i></a>
                 </div>
             </div>
         </div>

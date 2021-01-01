@@ -91,6 +91,22 @@ class Product
      */
     private $updated_at;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=PictureStock::class, inversedBy="product")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $pictureStock;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $shortDlc;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $started;
+
 
 
 
@@ -192,6 +208,43 @@ class Product
     public function setUpdatedAt(?\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+
+    public function getPictureStock(): ?PictureStock
+    {
+        return $this->pictureStock;
+    }
+
+    public function setPictureStock(?PictureStock $pictureStock): self
+    {
+        $this->pictureStock = $pictureStock;
+
+        return $this;
+    }
+
+    public function getShortDlc(): ?int
+    {
+        return $this->shortDlc;
+    }
+
+    public function setShortDlc(int $shortDlc): self
+    {
+        $this->shortDlc = $shortDlc;
+
+        return $this;
+    }
+
+    public function getStarted(): ?int
+    {
+        return $this->started;
+    }
+
+    public function setStarted(int $started): self
+    {
+        $this->started = $started;
 
         return $this;
     }

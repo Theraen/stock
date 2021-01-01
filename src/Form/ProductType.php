@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Category;
+use App\Entity\PictureStock;
 use App\Entity\Product;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -38,6 +39,9 @@ class ProductType extends AbstractType
             ->add('unit_measure_capacity', ChoiceType::class, [
                 'required' => true,
                 'label' => 'Unité de mesure',
+                'attr' => [
+                    'class' => 'selectpicker show-tick', 
+                ],
                 'choices' => [
                     'Masse' => [
                         'kg' => 'kg',
@@ -54,6 +58,18 @@ class ProductType extends AbstractType
                 'label' => 'Categorie',
                 'class' => Category::class,
                 "multiple" => false,
+                'attr' => [
+                    'class' => 'selectpicker show-tick', 
+                ],
+            ])
+            ->add('pictureStock', EntityType::class, [
+                'label' => 'Image',
+                'class' => PictureStock::class,
+                "multiple" => false,
+                'attr' => [
+                    'class' => 'selectpicker show-tick', 
+                    'data-live-search' => true,
+                ],
             ])
         ;
     }

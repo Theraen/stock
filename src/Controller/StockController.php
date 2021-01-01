@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
+use App\Service\Mailer;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -51,6 +52,7 @@ class StockController extends AbstractController
         if($form->isSubmitted() && $form->isValid()) {
             
             $product->setCreatedAt(new DateTime());
+            $product->setShortDlc(0);
 
             $this->em->persist($product);
             $this->em->flush();
@@ -75,7 +77,7 @@ class StockController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()) {
             
-            $product->setCreatedAt(new DateTime());
+            $product->setUpdatedAt(new DateTime());
 
             $this->em->flush();
 
@@ -109,6 +111,94 @@ class StockController extends AbstractController
         elseif($plusOrMinus == 'plus') {
             $product->setQuantity($qte+1);
             $this->addFlash("success", "Les quantités ont été modifiées");
+        }
+        else {
+            throw $this->createNotFoundException("Tu as entré de mauvais paramètre");
+        }
+
+        $this->em->flush();
+
+        return $this->redirectToRoute('stock');
+
+    }
+
+    /**
+     * @Route("/stock/checkDlc", name="stock_check_dlc")
+     */
+    public function checkDlc(Mailer $mailer): Response
+    {
+
+        $productsShortDLC = $this->productRepository->findAllShortDlc();
+        $productsLimitDLC = $this->productRepository->findAllLimitDlc();
+
+        
+
+        foreach($productsShortDLC as $productShort) {
+            $productShort->setShortDlc(1);
+            
+            $mailer->send(
+               'Un produit a une DLC courte', 
+                $_ENV['MAILER_SENDER'],
+                $_ENV['MAILER_RECEVER'],
+                'dlc',
+                [
+                    'name' => $productShort->getName(),
+                    'capacity' => $productShort->getCapacity(),
+                    'unitMeasure' => $productShort->getUnitMeasureCapacity(),
+                    'quantity' => $productShort->getQuantity(),
+                    'dlc' => $productShort->getDlc(),
+                ]
+
+                );
+                $this->em->flush();
+      
+        }
+
+        foreach($productsLimitDLC as $productLimit) {
+            $productLimit->setShortDlc(2);
+
+            
+            $mailer->send(
+               'Un produit a une DLC dépassé', 
+                $_ENV['MAILER_SENDER'],
+                $_ENV['MAILER_RECEVER'],
+                'dlc',
+                [
+                    'name' => $productLimit->getName(),
+                    'capacity' => $productLimit->getCapacity(),
+                    'unitMeasure' => $productLimit->getUnitMeasureCapacity(),
+                    'quantity' => $productLimit->getQuantity(),
+                    'dlc' => $productLimit->getDlc(),
+                ]
+
+                );
+                $this->em->flush();
+      
+        }
+
+        
+        return $this->redirectToRoute('stock');
+
+    }
+
+    /**
+     * @Route("/stock/started/{id}", name="stock_started")
+     */
+    public function started(Product $product): Response
+    {
+
+        $qte = $product->getQuantity();
+        $started = $product->getStarted();
+
+        if($qte >= 1 && $started == 0) {
+            $product->setStarted(1);
+        } 
+        elseif($qte > 1 && $started == 1) {
+            $product->setQuantity($qte-1);
+            $product->setStarted(0);
+        }
+        elseif($qte == 1 && $started == 1) {
+            $this->em->remove($product);
         }
         else {
             throw $this->createNotFoundException("Tu as entré de mauvais paramètre");

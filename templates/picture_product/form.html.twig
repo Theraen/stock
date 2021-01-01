@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une image{% endblock %}
+
+{% block body %}
+
+    <div class="card mb-4 py-3 border-left-info">
+        <div class="card-body">
+            <h1 class="d-inline-block">Ajouter une image</h1>            
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-lg-6 col-md-8">
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button class="btn btn-block btn-success" type="submit">Enregistrer</button>
+            {{ form_end(form) }}
+        </div>
+        
+    </div>
+    
+
+{% endblock %}
