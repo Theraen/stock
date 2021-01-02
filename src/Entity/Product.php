@@ -107,6 +107,12 @@ class Product
      */
     private $started;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="products")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
 
 
 
@@ -245,6 +251,18 @@ class Product
     public function setStarted(int $started): self
     {
         $this->started = $started;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

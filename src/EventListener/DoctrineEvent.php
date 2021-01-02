@@ -2,6 +2,7 @@
 
 namespace App\EventListener;
 
+use App\Entity\Category;
 use App\Entity\Log;
 use App\Entity\PictureStock;
 use App\Entity\Product;
@@ -42,6 +43,11 @@ class DoctrineEvent implements EventSubscriber {
             $log->setName('Une nouvelle image a été ajouté'); 
             $this->em->persist($log);
         }
+
+        elseif($entity instanceof Category) {
+            $log->setName('Une nouvelle categorie a été ajouté'); 
+            $this->em->persist($log);
+        }
         
         $this->em->flush();
     }
@@ -65,6 +71,11 @@ class DoctrineEvent implements EventSubscriber {
             $log->setName('L\'image ' . $entity->getName() . ' a été supprimé'); 
             $this->em->persist($log);
         }
+
+        elseif($entity instanceof Category) {
+            $log->setName('La categorie ' . $entity->getName() . ' a été supprimé'); 
+            $this->em->persist($log);
+        }
         
         $this->em->flush();
     }
@@ -80,6 +91,13 @@ class DoctrineEvent implements EventSubscriber {
         if($entity instanceof Product) {
             
             $log->setName('Le produit '. $entity->getName() . ' a été modifié'); 
+            $this->em->persist($log);
+
+        }
+
+        elseif($entity instanceof Category) {
+            
+            $log->setName('La categorie '. $entity->getName() . ' a été modifié'); 
             $this->em->persist($log);
 
         }
