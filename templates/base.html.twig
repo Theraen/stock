@@ -56,18 +56,18 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item {% if route == "picture_product" or route == "picture_product_add" %}active{% endif %}">
+            <li class="nav-item {% if route == "picture_product" or route == "picture_product_add" or route == "category_product" %}active{% endif %}">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#parameters" aria-expanded="true"
                     aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Paramètres</span>
                 </a>
-                <div id="parameters" class="collapse {% if route == "picture_product" or route == "picture_product_add" %}show{% endif %}"
+                <div id="parameters" class="collapse {% if route == "picture_product" or route == "picture_product_add" or route == "category_product" %}show{% endif %}"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Paramètres produits :</h6>
                         <a class="collapse-item {% if route == "picture_product" or route == "picture_product_add" %}active{% endif %}" href="{{ path('picture_product') }}">Images de produits</a>
-                        <a class="collapse-item" href="buttons.html">Catégories de produits</a>
+                        <a class="collapse-item {% if route == "category_product" %}active{% endif %}" href="{{ path('category_product') }}">Catégories de produits</a>
                         
                     </div>
                 </div>
