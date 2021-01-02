@@ -34,7 +34,7 @@
                         <p class="card-text">DLC : {{ product.dlc|date("d/m/Y") }}</p>
                     {% endif %}
                     
-                    <a href="{{ path('stock_update_qte', {plusOrMinus: "plus", id: product.id}) }}" class="btn btn-success"><i class="fas fa-plus"></i></a>
+                    <a href="{{ path('stock_update_qte', {plusOrMinus: "plus", id: product.id}) }}"><button class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" title="test"> <i class="fas fa-plus"></i></button></a>
                         {% if product.started == 0 %}
                             <a href="{{ path('stock_started', {id: product.id}) }}" class="btn btn-success"><i class="fas fa-drumstick-bite"></i></a>
                         {% else %}

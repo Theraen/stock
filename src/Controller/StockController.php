@@ -53,6 +53,7 @@ class StockController extends AbstractController
             
             $product->setCreatedAt(new DateTime());
             $product->setShortDlc(0);
+            $product->setStarted(0);
 
             $this->em->persist($product);
             $this->em->flush();

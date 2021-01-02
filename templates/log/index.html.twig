@@ -1,0 +1,175 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log{% endblock %}
+
+{% block body %}
+
+    <div class="card mb-4 py-3 border-left-info">
+        <div class="card-body">
+            <h1 class="d-inline-block">Log des activités</h1>
+           
+        </div>
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Log</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="tableLog" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for log in logs %}
+                        <tr>
+                            <td>{{ log.id }}</td>
+                            <td>{{ log.name }}</td>
+                            <td>{{ log.type }}</td>
+                            <td>{{ log.createdAt|date('d/m/Y H:i:s')}}</td>
+                        </tr>
+                    {% endfor %}
+                                                
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+    <script>
+        $(document).ready(function() {
+			$('#tableLog').dataTable( {
+			    "language": {
+                    "emptyTable": "Aucune donnée disponible dans le tableau",
+                    "info": "Affichage de l'élément _START_ à _END_ sur _TOTAL_ éléments",
+                    "infoEmpty": "Affichage de l'élément 0 à 0 sur 0 élément",
+                    "infoFiltered": "(filtré à partir de _MAX_ éléments au total)",
+                    "infoThousands": ",",
+                    "lengthMenu": "Afficher _MENU_ éléments",
+                    "loadingRecords": "Chargement...",
+                    "processing": "Traitement...",
+                    "search": "Rechercher :",
+                    "zeroRecords": "Aucun élément correspondant trouvé",
+                    "paginate": {
+                        "first": "Premier",
+                        "last": "Dernier",
+                        "next": "Suivant",
+                        "previous": "Précédent"
+                    },
+                    "aria": {
+                        "sortAscending": ": activer pour trier la colonne par ordre croissant",
+                        "sortDescending": ": activer pour trier la colonne par ordre décroissant"
+                    },
+                    "select": {
+                        "rows": {
+                            "_": "%d lignes sélectionnées",
+                            "0": "Aucune ligne sélectionnée",
+                            "1": "1 ligne sélectionnée"
+                        },
+                        "_": "%d lignes selectionées"
+                    },
+                    "autoFill": {
+                        "cancel": "Annuler",
+                        "fill": "Remplir toutes les cellules avec <i>%d<\/i>",
+                        "fillHorizontal": "Remplir les cellules horizontalement",
+                        "fillVertical": "Remplir les cellules verticalement",
+                        "info": "Exemple de remplissage automatique"
+                    },
+                    "searchBuilder": {
+                        "conditions": {
+                            "date": {
+                                "after": "Après le",
+                                "before": "Avant le",
+                                "between": "Entre",
+                                "empty": "Vide",
+                                "equals": "Egal à",
+                                "not": "Différent de",
+                                "notBetween": "Pas entre",
+                                "notEmpty": "Non vide"
+                            },
+                            "moment": {
+                                "after": "Après le",
+                                "before": "Avant le",
+                                "between": "Entre",
+                                "empty": "Vide",
+                                "equals": "Egal à",
+                                "not": "Différent de",
+                                "notBetween": "Pas entre",
+                                "notEmpty": "Non vide"
+                            },
+                            "number": {
+                                "between": "Entre",
+                                "empty": "Vide",
+                                "equals": "Egal à",
+                                "gt": "Supérieur à",
+                                "gte": "Supérieur ou égal à",
+                                "lt": "Inférieur à",
+                                "lte": "Inférieur ou égal à",
+                                "not": "Différent de",
+                                "notBetween": "Pas entre",
+                                "notEmpty": "Non vide"
+                            },
+                            "string": {
+                                "contains": "Contient",
+                                "empty": "Vide",
+                                "endsWith": "Se termine par",
+                                "equals": "Egal à",
+                                "not": "Différent de",
+                                "notEmpty": "Non vide",
+                                "startsWith": "Commence par"
+                            }
+                        }
+                    },
+                     "searchPanes": {
+                        "clearMessage": "Effacer tout",
+                        "count": "{total}",
+                        "emptyPanes": "Pas de recherche",
+                        "loadMessage": "Chargement de la recherche",
+                        "title": "Filtres actifs - %d"
+                    },
+                    "searchPlaceholder": "Exemple de recherche",
+                    "buttons": {
+                        "copy": "copier",
+                        "copyKeys": "Appuyer sur ctrl ou u2318 + C pour copier les données du tableau dans votre presse-papier.",
+                        "copySuccess": {
+                            "1": "une ligne copiée dans le presse-papier"
+                        },
+                        "copyTitle": "copier dans le presse-papier",
+                        "csv": "csv",
+                        "excel": "excel",
+                        "pdf": "pdf",
+                        "print": "imprimer"
+                    }
+			    }
+			});
+		});
+    </script>
+
+{% endblock %}
+
