@@ -10,15 +10,18 @@ use DateTime;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Event\LifecycleEventArgs;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 class DoctrineEvent implements EventSubscriber {
 
     private $em;
+    private $user;
 
 
-    public function __construct(EntityManagerInterface $em)
+    public function __construct(EntityManagerInterface $em, TokenStorageInterface $tokenStorage)
     {
         $this->em = $em;
+        $this->user = $tokenStorage->getToken()->getUser();
     }
 
     public function getSubscribedEvents()
@@ -31,7 +34,8 @@ class DoctrineEvent implements EventSubscriber {
         $log = new Log;
         $log->setType('add');
         $log->setCreatedAt(new DateTime());
-        $log->setUser($args->getObject()->getUser());
+        $log->setUser($this->user);
+
 
         
 
@@ -61,7 +65,7 @@ class DoctrineEvent implements EventSubscriber {
         $log = new Log;
         $log->setType('delete');
         $log->setCreatedAt(new DateTime());
-        $log->setUser($args->getObject()->getUser());
+        $log->setUser($this->user);
 
 
         
@@ -91,7 +95,7 @@ class DoctrineEvent implements EventSubscriber {
         $log = new Log;
         $log->setType('update');
         $log->setCreatedAt(new DateTime());
-        $log->setUser($args->getObject()->getUser());
+        $log->setUser($this->user);
 
         
 
