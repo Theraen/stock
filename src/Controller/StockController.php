@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Data\SearchProduct;
 use App\Entity\Product;
 use App\Form\ProductType;
+use App\Form\SearchProductType;
 use App\Repository\ProductRepository;
 use App\Service\Mailer;
 use DateTime;
@@ -12,6 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class StockController extends AbstractController
 {
@@ -27,13 +30,21 @@ class StockController extends AbstractController
     /**
      * @Route("/stock", name="stock")
      */
-    public function view(): Response
+    public function view(Request $request): Response
     {
+        $dataProduct = new SearchProduct();
+        $dataProduct->page = $request->get('page', 1);
+        
+        $form = $this->createForm(SearchProductType::class, $dataProduct);
+        
+        $form->handleRequest($request);
+        $products = $this->productRepository->findSearch($dataProduct);
 
-        $products = $this->productRepository->findAll();
+ 
 
         return $this->render('stock/index.html.twig', [
             'products' => $products,
+            'form' => $form->createView(),
         ]);
     }
 
@@ -41,7 +52,7 @@ class StockController extends AbstractController
     /**
      * @Route("/stock/add", name="stock_add")
      */
-    public function add(Request $request): Response
+    public function add(Request $request, UserInterface $user): Response
     {
         $product = new Product;
 
@@ -54,6 +65,7 @@ class StockController extends AbstractController
             $product->setCreatedAt(new DateTime());
             $product->setShortDlc(0);
             $product->setStarted(0);
+            $product->setUser($user);
 
             $this->em->persist($product);
             $this->em->flush();

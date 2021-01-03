@@ -15,6 +15,7 @@ class DoctrineEvent implements EventSubscriber {
 
     private $em;
 
+
     public function __construct(EntityManagerInterface $em)
     {
         $this->em = $em;
@@ -30,11 +31,14 @@ class DoctrineEvent implements EventSubscriber {
         $log = new Log;
         $log->setType('add');
         $log->setCreatedAt(new DateTime());
+        $log->setUser($args->getObject()->getUser());
+
         
 
         if($entity instanceof Product) {
             
-            $log->setName('Un nouveau produit a été ajouté'); 
+            $log->setName('Un nouveau produit a été ajouté');
+            
             $this->em->persist($log);
 
         }
@@ -57,6 +61,8 @@ class DoctrineEvent implements EventSubscriber {
         $log = new Log;
         $log->setType('delete');
         $log->setCreatedAt(new DateTime());
+        $log->setUser($args->getObject()->getUser());
+
 
         
 
@@ -85,6 +91,7 @@ class DoctrineEvent implements EventSubscriber {
         $log = new Log;
         $log->setType('update');
         $log->setCreatedAt(new DateTime());
+        $log->setUser($args->getObject()->getUser());
 
         
 

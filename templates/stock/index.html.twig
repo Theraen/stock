@@ -18,33 +18,53 @@
     </div>
 
     <div class="row">
-    {% for product in products %}
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card {% if product.shortDlc == 1 %}bg-gradient-warning text-white{% elseif product.shortDlc == 2 %}bg-gradient-danger text-white{% endif %}">
-                {% if product.started != 0 %}
-                <div class="ribbon">
-                    <span>1 Entamé</span>
-                </div>
-                {% endif %}
-                <img src="{{ asset('uploads/picture/product/' ~ product.pictureStock.picture) }}" alt="" width="100%">
-                <div class="card-body">
-                    <h5 class="card-title">{{ product.name  ~ " " ~ product.capacity ~ product.unitMeasureCapacity}}</h5>
-                    <p class="card-text">Quantité : {{ product.quantity }}</p>
-                    {% if product.dlc != NULL %}
-                        <p class="card-text">DLC : {{ product.dlc|date("d/m/Y") }}</p>
-                    {% endif %}
-                    
-                    <a href="{{ path('stock_update_qte', {plusOrMinus: "plus", id: product.id}) }}"><button class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" title="test"> <i class="fas fa-plus"></i></button></a>
-                        {% if product.started == 0 %}
-                            <a href="{{ path('stock_started', {id: product.id}) }}" class="btn btn-success"><i class="fas fa-drumstick-bite"></i></a>
-                        {% else %}
-                            <a href="{{ path('stock_started', {id: product.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                        {% endif %}
-                       <a href="{{ path('stock_update', {id: product.id}) }}" class="btn btn-warning float-right"><i class="fas fa-edit"></i></a>
-                </div>
-            </div>
+        <div class="col-lg-3">
+            {{ form_start(form, {attr: {class: 'filter'}}) }}
+            {{ form_row(form.q) }}
+            <h4>Catégories</h4>
+            {{ form_row(form.categories) }}
+            <button type="submit" class="btn btn-primary btn-block">Filtrer</button>
+            {{ form_end(form) }}
         </div>
-    {% endfor %}
+        <div class="col-lg-9">
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card {% if product.shortDlc == 1 %}bg-gradient-warning text-white{% elseif product.shortDlc == 2 %}bg-gradient-danger text-white{% endif %}">
+                            {% if product.started != 0 %}
+                                <div class="ribbon">
+                                    <span>1 Entamé</span>
+                                </div>
+                            {% endif %}
+                            <img src="{{ asset('uploads/picture/product/' ~ product.pictureStock.picture) }}" alt="" width="100%">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.name  ~ " " ~ product.capacity ~ product.unitMeasureCapacity}}</h5>
+                                <p class="card-text">Quantité : {{ product.quantity }}</p>
+                                {% if product.dlc != NULL %}
+                                    <p class="card-text">DLC : {{ product.dlc|date("d/m/Y") }}</p>
+                                {% endif %}
+                            
+                                <a href="{{ path('stock_update_qte', {plusOrMinus: "plus", id: product.id}) }}"><button class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" title="test"> <i class="fas fa-plus"></i></button></a>
+                                {% if product.started == 0 %}
+                                    <a href="{{ path('stock_started', {id: product.id}) }}" class="btn btn-success"><i class="fas fa-drumstick-bite"></i></a>
+                                {% else %}
+                                    <a href="{{ path('stock_started', {id: product.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                {% endif %}
+                                <a href="{{ path('stock_update', {id: product.id}) }}" class="btn btn-warning float-right"><i class="fas fa-edit"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                
+            </div>
+
+            <div class="float-right">
+                {{ knp_pagination_render(products) }}
+            </div>
+            
+            
+        </div>
+    
     </div>
     
 
