@@ -1,0 +1,11 @@
+{% extends 'baseError.html.twig' %}
+
+{% block title %}{% trans %}Site under maintenance{% endtrans %}{% endblock %}
+
+{% block body %}
+
+    <img class="img-fluid p-4" src="{{ asset('img/errors/503.svg') }}" alt="">
+    <p class="lead">{% trans %}Site under maintenance{% endtrans %}.</p>
+
+
+{% endblock %}

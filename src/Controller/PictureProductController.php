@@ -14,18 +14,21 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class PictureProductController extends AbstractController
 {
     private $em;
     private $pictureStockRepository;
     private $appKernel;
+    private $translator;
 
-    public function __construct(EntityManagerInterface $em, PictureStockRepository $pictureStockRepository, KernelInterface $appKernel)
+    public function __construct(EntityManagerInterface $em, PictureStockRepository $pictureStockRepository, KernelInterface $appKernel, TranslatorInterface $translator)
     {
         $this->em = $em;
         $this->pictureStockRepository = $pictureStockRepository;
         $this->appKernel = $appKernel;
+        $this->translator = $translator;
     }
     /**
      * @Route("/picture", name="picture_product")
@@ -91,10 +94,11 @@ class PictureProductController extends AbstractController
     public function delete(Request $request, PictureStock $pictureStock): Response
     {
 
+        $messageDelete = $this->translator->trans('The image has been deleted');
         $projectDir = $this->appKernel->getProjectDir();
         unlink($projectDir . '/public/uploads/picture/product/'.$pictureStock->getPicture());
         $this->em->remove($pictureStock);
-        $this->addFlash("danger", "L'image a bien été supprimé");
+        $this->addFlash("danger", $messageDelete);
 
         $this->em->flush();
 

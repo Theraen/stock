@@ -15,17 +15,20 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class StockController extends AbstractController
 {
 
     private $em;
     private $productRepository;
+    private $translator;
 
-    public function __construct(EntityManagerInterface $em, ProductRepository $productRepository)
+    public function __construct(EntityManagerInterface $em, ProductRepository $productRepository, TranslatorInterface $translator)
     {
         $this->em = $em;
         $this->productRepository = $productRepository;
+        $this->translator = $translator;
     }
     /**
      * @Route("/stock", name="stock")
@@ -112,21 +115,19 @@ class StockController extends AbstractController
         $params = $request->attributes->get('_route_params');
         $plusOrMinus = $params['plusOrMinus'];
 
+        $messageUpdate = $this->translator->trans('Quantities have been changed');
+        $messageBadParam = $this->translator->trans('You entered the wrong parameters');
 
-        if($plusOrMinus == 'minus' && $qte == 1) {
-            $this->em->remove($product);
-            $this->addFlash("danger", "Le produit a bien été supprimé");
-        }
-        elseif($plusOrMinus == 'minus') {
+        if($plusOrMinus == 'minus') {
             $product->setQuantity($qte-1);
-            $this->addFlash("success", "Les quantités ont été modifiées");
+            $this->addFlash("success", $messageUpdate);
         }
         elseif($plusOrMinus == 'plus') {
             $product->setQuantity($qte+1);
-            $this->addFlash("success", "Les quantités ont été modifiées");
+            $this->addFlash("success", $messageUpdate);
         }
         else {
-            throw $this->createNotFoundException("Tu as entré de mauvais paramètre");
+            throw $this->createNotFoundException($messageBadParam);
         }
 
         $this->em->flush();
@@ -144,13 +145,16 @@ class StockController extends AbstractController
         $productsShortDLC = $this->productRepository->findAllShortDlc();
         $productsLimitDLC = $this->productRepository->findAllLimitDlc();
 
+        $messageShortDLC = $this->translator->trans('A product has a short shelf life');
+        $messageExceededDLC = $this->translator->trans('A product has an outdated shelf life');
+
         
 
         foreach($productsShortDLC as $productShort) {
             $productShort->setShortDlc(1);
             
             $mailer->send(
-               'Un produit a une DLC courte', 
+               $messageShortDLC, 
                 $_ENV['MAILER_SENDER'],
                 $_ENV['MAILER_RECEVER'],
                 'dlc',
@@ -172,7 +176,7 @@ class StockController extends AbstractController
 
             
             $mailer->send(
-               'Un produit a une DLC dépassé', 
+               $messageExceededDLC, 
                 $_ENV['MAILER_SENDER'],
                 $_ENV['MAILER_RECEVER'],
                 'dlc',
@@ -202,6 +206,8 @@ class StockController extends AbstractController
 
         $qte = $product->getQuantity();
         $started = $product->getStarted();
+        $messageDelete = $this->translator->trans('The product has been deleted');
+        $messageBadParam = $this->translator->trans('You entered the wrong parameters');
 
         if($qte >= 1 && $started == 0) {
             $product->setStarted(1);
@@ -209,12 +215,14 @@ class StockController extends AbstractController
         elseif($qte > 1 && $started == 1) {
             $product->setQuantity($qte-1);
             $product->setStarted(0);
+            $this->addFlash("danger", $messageDelete);
         }
         elseif($qte == 1 && $started == 1) {
             $this->em->remove($product);
+            $this->addFlash("danger", $messageDelete);
         }
         else {
-            throw $this->createNotFoundException("Tu as entré de mauvais paramètre");
+            throw $this->createNotFoundException($messageBadParam);
         }
 
         $this->em->flush();

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Inscription</title>
+    <title>{% trans %}Sign up{% endtrans %}</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -34,7 +34,7 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Créer un compte</h1>
+                                <h1 class="h4 text-gray-900 mb-4">{% trans %}Create an account{% endtrans %}</h1>
                             </div>
 
                             {{ form_start(registrationForm, {'attr': {'class': 'user'}} ) }}
@@ -44,14 +44,14 @@
                                 {{ form_row(registrationForm.plainPassword) }}
                                 {{ form_row(registrationForm.agreeTerms) }}
 
-                                <button type="submit" class="btn btn-primary btn-user btn-block">Enregistrer</button>
+                                <button type="submit" class="btn btn-primary btn-user btn-block">{% trans %}Sign up{% endtrans %}</button>
                             {{ form_end(registrationForm) }}
                             
                                 
                             <hr>
 
                             <div class="text-center">
-                                <a class="small" href="{{ path('app_login') }}">Tu as déjà un compte ? connecte toi !</a>
+                                <a class="small" href="{{ path('app_login') }}">{% trans %}Do you already have an account? connect yourself !{% endtrans %}</a>
                             </div>
                         </div>
                     </div>

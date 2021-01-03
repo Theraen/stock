@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Categories de produits{% endblock %}
+{% block title %}{% trans %}Product categories{% endtrans %} {% endblock %}
 
 {% block body %}
 
     <div class="card mb-4 py-3 border-left-info">
         <div class="card-body">
-            <h1 class="d-inline-block">Catégories</h1>
+            <h1 class="d-inline-block">{% trans %}Categories{% endtrans %}</h1>
                 <a href="{{ path('category_product_add') }}" class="btn btn-success btn-icon-split float-right">
                     <span class="icon text-white-50">
                         <i class="fas fa-plus"></i>
                     </span>
-                    <span class="text">Ajouter une catégorie</span>
+                    <span class="text">{% trans %}Add category{% endtrans %}</span>
                 </a>
             
         </div>
@@ -26,18 +26,18 @@
                 <table class="table table-bordered" id="tableLog" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Nom</th>
-                            <th>Date de création</th>
-                            <th>Action</th>
+                            <th>{% trans %}ID{% endtrans %}</th>
+                            <th>{% trans %}Name{% endtrans %}</th>
+                            <th>{% trans %}Creation date{% endtrans %}</th>
+                            <th>{% trans %}Action{% endtrans %}</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>ID</th>
-                            <th>Nom</th>
-                            <th>Date de création</th>
-                            <th>Action</th>
+                            <th>{% trans %}ID{% endtrans %}</th>
+                            <th>{% trans %}Name{% endtrans %}</th>
+                            <th>{% trans %}Creation date{% endtrans %}</th>
+                            <th>{% trans %}Action{% endtrans %}</th>
                         </tr>
                     </tfoot>
                     <tbody>

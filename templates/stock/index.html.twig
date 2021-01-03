@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Inventaire{% endblock %}
+{% block title %}{% trans %}Supply{% endtrans %}{% endblock %}
 
 {% block body %}
 
     <div class="card mb-4 py-3 border-left-info">
         <div class="card-body">
-            <h1 class="d-inline-block">Inventaire</h1>
+            <h1 class="d-inline-block">{% trans %}Supply{% endtrans %}</h1>
                 <a href="{{ path('stock_add') }}" class="btn btn-success btn-icon-split float-right">
                     <span class="icon text-white-50">
                         <i class="fas fa-plus"></i>
                     </span>
-                    <span class="text">Ajouter un produit</span>
+                    <span class="text">{% trans %}Add a product{% endtrans %}</span>
                 </a>
             
         </div>
@@ -21,9 +21,9 @@
         <div class="col-lg-3">
             {{ form_start(form, {attr: {class: 'filter'}}) }}
             {{ form_row(form.q) }}
-            <h4>Catégories</h4>
+            <h4>{% trans %}Categories{% endtrans %}</h4>
             {{ form_row(form.categories) }}
-            <button type="submit" class="btn btn-primary btn-block">Filtrer</button>
+            <button type="submit" class="btn btn-primary btn-block">{% trans %}Filter{%µ endtrans %} </button>
             {{ form_end(form) }}
         </div>
         <div class="col-lg-9">
@@ -33,15 +33,15 @@
                         <div class="card {% if product.shortDlc == 1 %}bg-gradient-warning text-white{% elseif product.shortDlc == 2 %}bg-gradient-danger text-white{% endif %}">
                             {% if product.started != 0 %}
                                 <div class="ribbon">
-                                    <span>1 Entamé</span>
+                                    <span>1 {% trans %}started{% endtrans %}</span>
                                 </div>
                             {% endif %}
                             <img src="{{ asset('uploads/picture/product/' ~ product.pictureStock.picture) }}" alt="" width="100%">
                             <div class="card-body">
                                 <h5 class="card-title">{{ product.name  ~ " " ~ product.capacity ~ product.unitMeasureCapacity}}</h5>
-                                <p class="card-text">Quantité : {{ product.quantity }}</p>
+                                <p class="card-text">{% trans %}Quantity{% endtrans %} : {{ product.quantity }}</p>
                                 {% if product.dlc != NULL %}
-                                    <p class="card-text">DLC : {{ product.dlc|date("d/m/Y") }}</p>
+                                    <p class="card-text">{% trans %}shelf life{% endtrans %} : {{ product.dlc|date("d/m/Y") }}</p>
                                 {% endif %}
                             
                                 <a href="{{ path('stock_update_qte', {plusOrMinus: "plus", id: product.id}) }}"><button class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" title="test"> <i class="fas fa-plus"></i></button></a>

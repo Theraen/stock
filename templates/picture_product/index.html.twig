@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Images de produits{% endblock %}
+{% block title %}{% trans %}Product picture{% endtrans %}{% endblock %}
 
 {% block body %}
 
     <div class="card mb-4 py-3 border-left-info">
         <div class="card-body">
-            <h1 class="d-inline-block">Images</h1>
+            <h1 class="d-inline-block">{% trans %}Picture{% endtrans %}</h1>
                 <a href="{{ path('picture_product_add') }}" class="btn btn-success btn-icon-split float-right">
                     <span class="icon text-white-50">
                         <i class="fas fa-plus"></i>
                     </span>
-                    <span class="text">Ajouter une image</span>
+                    <span class="text">{% trans %}Add picture{% endtrans %}</span>
                 </a>
             
         </div>

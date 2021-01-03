@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log{% endblock %}
+{% block title %}{% trans %}Log{% trans %}{% endblock %}
 
 {% block body %}
 
     <div class="card mb-4 py-3 border-left-info">
         <div class="card-body">
-            <h1 class="d-inline-block">Log des activités</h1>
+            <h1 class="d-inline-block">{% trans %}Activity log{% endtrans %}</h1>
            
         </div>
     </div>
@@ -20,18 +20,18 @@
                 <table class="table table-bordered" id="tableLog" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Nom</th>
-                            <th>Type</th>
-                            <th>Date</th>
+                            <th>{% trans %}ID{% endtrans %}</th>
+                            <th>{% trans %}Name{% endtrans %}</th>
+                            <th>{% trans %}Type{% endtrans %}</th>
+                            <th>{% trans %}Date{% endtrans %}</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>ID</th>
-                            <th>Nom</th>
-                            <th>Type</th>
-                            <th>Date</th>
+                            <th>{% trans %}ID{% endtrans %}</th>
+                            <th>{% trans %}Name{% endtrans %}</th>
+                            <th>{% trans %}Type{% endtrans %}</th>
+                            <th>{% trans %}Date{% endtrans %}</th>
                         </tr>
                     </tfoot>
                     <tbody>

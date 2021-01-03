@@ -5,6 +5,8 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     pictureProduct_directory: '%kernel.project_dir%/public/uploads/picture/product'
+    maintenanceFilePath: '%kernel.project_dir%/public/.maintenance'
+    app.locales: [en, fr]
 
 services:
     # default configuration for services in *this* file
@@ -37,3 +39,12 @@ services:
             - { name: doctrine.event_listener, event: postPersist, lazy: true }
             - { name: doctrine.event_listener, event: postUpdate, lazy: true }
             - { name: doctrine.event_listener, event: postRemove, lazy: true }
+    
+    app.listener.maintenancelistener:
+        class: App\EventListener\MaintenanceListener
+        arguments:
+            - '%maintenanceFilePath%'
+            - '@twig'
+        tags:
+            - { name: kernel.event_listener, event: kernel.request }
+

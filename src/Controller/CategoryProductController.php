@@ -11,17 +11,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class CategoryProductController extends AbstractController
 {
 
     private $em;
     private $categoryRepository;
+    private $translator;
 
-    public function __construct(EntityManagerInterface $em, CategoryRepository $categoryRepository)
+    public function __construct(EntityManagerInterface $em, CategoryRepository $categoryRepository, TranslatorInterface $translator)
     {
         $this->em = $em;
         $this->categoryRepository = $categoryRepository;
+        $this->translator = $translator;
     }
     
     /**
@@ -93,8 +96,10 @@ class CategoryProductController extends AbstractController
     public function delete(Request $request, Category $category): Response
     {
 
+        $messageDelete = $this->translator->trans('The category has been deleted');
+
         $this->em->remove($category);
-        $this->addFlash("danger", "La categorie a bien été supprimé");
+        $this->addFlash("danger", $messageDelete);
 
         $this->em->flush();
 

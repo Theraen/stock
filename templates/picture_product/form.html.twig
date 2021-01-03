@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter une image{% endblock %}
+{% block title %}{% trans %}Add picture{% endtrans %}{% endblock %}
 
 {% block body %}
 
     <div class="card mb-4 py-3 border-left-info">
         <div class="card-body">
-            <h1 class="d-inline-block">Ajouter une image</h1>            
+            <h1 class="d-inline-block">{% trans %}Add picture{% endtrans %}</h1>            
         </div>
     </div>
 
@@ -14,7 +14,7 @@
         <div class="col-lg-6 col-md-8">
             {{ form_start(form) }}
                 {{ form_widget(form) }}
-                <button class="btn btn-block btn-success" type="submit">Enregistrer</button>
+                <button class="btn btn-block btn-success" type="submit">{% trans %}Save{% endtrans %}</button>
             {{ form_end(form) }}
         </div>
         

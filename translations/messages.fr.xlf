@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="H83yjCw" resname="The category has been deleted">
+        <source>The category has been deleted</source>
+        <target>La catégorie a été supprimée</target>
+      </trans-unit>
+      <trans-unit id="6YjfKG3" resname="The image has been deleted">
+        <source>The image has been deleted</source>
+        <target>L'image a été supprimée</target>
+      </trans-unit>
+      <trans-unit id="cR5CluT" resname="Please confirm your email address">
+        <source>Please confirm your email address</source>
+        <target>Merci de confirmer votre adresse e-mail</target>
+      </trans-unit>
+      <trans-unit id="uTIRUbs" resname="Your email address is now validated">
+        <source>Your email address is now validated</source>
+        <target>Votre adresse email est maintenant validée</target>
+      </trans-unit>
+      <trans-unit id="rCQ5n52" resname="Quantities have been changed">
+        <source>Quantities have been changed</source>
+        <target>Les quantités ont été modifiées</target>
+      </trans-unit>
+      <trans-unit id="H_nk3ok" resname="You entered the wrong parameters">
+        <source>You entered the wrong parameters</source>
+        <target>Vous avez entré les mauvais paramètres</target>
+      </trans-unit>
+      <trans-unit id="U8CK_.H" resname="A product has a short shelf life">
+        <source>A product has a short shelf life</source>
+        <target>Un produit a une DLC courte</target>
+      </trans-unit>
+      <trans-unit id="dCDAIqv" resname="A product has an outdated shelf life">
+        <source>A product has an outdated shelf life</source>
+        <target>Un produit a une DLC dépassée</target>
+      </trans-unit>
+      <trans-unit id="8YyMw_u" resname="The product has been deleted">
+        <source>The product has been deleted</source>
+        <target>Le produit a été supprimé</target>
+      </trans-unit>
+      <trans-unit id="lnMiTYp" resname="House inventory">
+        <source>House inventory</source>
+        <target>Inventaire de la maison</target>
+      </trans-unit>
+      <trans-unit id="v0KNP.X" resname="Supply">
+        <source>Supply</source>
+        <target>Stock</target>
+      </trans-unit>
+      <trans-unit id="1mQoLmL" resname="Recipes">
+        <source>Recipes</source>
+        <target>Recettes</target>
+      </trans-unit>
+      <trans-unit id="dKiDoDe" resname="Settings">
+        <source>Settings</source>
+        <target>Paramètres</target>
+      </trans-unit>
+      <trans-unit id="PHeJM.A" resname="Product settings">
+        <source>Product settings</source>
+        <target>Paramètres produits</target>
+      </trans-unit>
+      <trans-unit id="Cvz5Md6" resname="Product picture">
+        <source>Product picture</source>
+        <target>Images de produits</target>
+      </trans-unit>
+      <trans-unit id="tcOzPaO" resname="Product categories">
+        <source>Product categories</source>
+        <target>Catégories de produits</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile">
+        <source>Profile</source>
+        <target>Profil</target>
+      </trans-unit>
+      <trans-unit id="TQB25rT" resname="Activities">
+        <source>Activities</source>
+        <target>Activités</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="h9EiKAH" resname="Ready to Leave ?">
+        <source>Ready to Leave ?</source>
+        <target>Prêt à partir ?</target>
+      </trans-unit>
+      <trans-unit id="rj69T0l" resname="Click on &quot;Logout&quot; if you want to leave us">
+        <source>Click on "Logout" if you want to leave us</source>
+        <target>Cliquez sur "Déconnexion" si vous souhaitez nous quitter</target>
+      </trans-unit>
+      <trans-unit id="E8ou4km" resname="Canceled">
+        <source>Canceled</source>
+        <target>Annulé</target>
+      </trans-unit>
+      <trans-unit id="MYZVzqS" resname="Languages">
+        <source>Languages</source>
+        <target>Langues</target>
+      </trans-unit>
+      <trans-unit id="XiuOllA" resname="Sign up">
+        <source>Sign up</source>
+        <target>S'inscrire</target>
+      </trans-unit>
+      <trans-unit id="hgM.daT" resname="Create an account">
+        <source>Create an account</source>
+        <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="rsX4DTb" resname="Do you already have an account? connect yourself !">
+        <source>Do you already have an account? connect yourself !</source>
+        <target>Avez-vous déjà un compte? connectez-vous !</target>
+      </trans-unit>
+      <trans-unit id="bPRholL" resname="Add a product">
+        <source>Add a product</source>
+        <target>Ajouter un produit</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Sauvegarder</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>S'identifier</target>
+      </trans-unit>
+      <trans-unit id="30hk3SB" resname="You are already connected with">
+        <source>You are already connected with</source>
+        <target>Vous êtes déjà connecté avec</target>
+      </trans-unit>
+      <trans-unit id="EVedc_9" resname="Connect yourself">
+        <source>Connect yourself</source>
+        <target>Connectez-vous</target>
+      </trans-unit>
+      <trans-unit id="u0L4zVJ" resname="Forgot password">
+        <source>Forgot password</source>
+        <target>Mot de passe oublié</target>
+      </trans-unit>
+      <trans-unit id="4Xfdz8J" resname="Site under maintenance">
+        <source>Site under maintenance</source>
+        <target>Site en maintenance</target>
+      </trans-unit>
+      <trans-unit id="uLHYlMa" resname="Categories">
+        <source>Categories</source>
+        <target>Catégories</target>
+      </trans-unit>
+      <trans-unit id="qv30KP0" resname="Add category">
+        <source>Add category</source>
+        <target>Ajouter une catégorie</target>
+      </trans-unit>
+      <trans-unit id="OEOXHc." resname="ID">
+        <source>ID</source>
+        <target>ID</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="bk0LHGc" resname="Creation date">
+        <source>Creation date</source>
+        <target>Date de création</target>
+      </trans-unit>
+      <trans-unit id="ZM.xMZ0" resname="Action">
+        <source>Action</source>
+        <target>Action</target>
+      </trans-unit>
+      <trans-unit id=".U7ai4A" resname="Product concerned">
+        <source>Product concerned</source>
+        <target>Produit concerné</target>
+      </trans-unit>
+      <trans-unit id="giurjUG" resname="Quantity">
+        <source>Quantity</source>
+        <target>Quantité</target>
+      </trans-unit>
+      <trans-unit id="xre.rCP" resname="Shelf life">
+        <source>Shelf life</source>
+        <target>DLC</target>
+      </trans-unit>
+      <trans-unit id="mhxU9V5" resname="Picture">
+        <source>Picture</source>
+        <target>Image</target>
+      </trans-unit>
+      <trans-unit id="HHXi7Ud" resname="Add picture">
+        <source>Add picture</source>
+        <target>Ajouter une image</target>
+      </trans-unit>
+      <trans-unit id="kpInJd7" resname="Gateway timeout">
+        <source>Gateway timeout</source>
+        <target>Délais d'expiration</target>
+      </trans-unit>
+      <trans-unit id="mYaZNCK" resname="The server encountered a temporary error and could not complete your request.">
+        <source>The server encountered a temporary error and could not complete your request.</source>
+        <target>Le serveur a rencontré une erreur temporaire et n'a pas pu terminer votre demande.</target>
+      </trans-unit>
+      <trans-unit id="I4398yU" resname="Returned to site">
+        <source>Returned to site</source>
+        <target>Retourné au site</target>
+      </trans-unit>
+      <trans-unit id="pGmrTKT" resname="Page not found">
+        <source>Page not found</source>
+        <target>Page non trouvée</target>
+      </trans-unit>
+      <trans-unit id="hCil6fk" resname="This requested URL was not found on this server.">
+        <source>This requested URL was not found on this server.</source>
+        <target>Cette URL demandée n'a pas été trouvée sur ce serveur.</target>
+      </trans-unit>
+      <trans-unit id="eDQqCQW" resname="Forbidden">
+        <source>Forbidden</source>
+        <target>Interdit</target>
+      </trans-unit>
+      <trans-unit id="cW.UVwS" resname="Your client does not have permission to get this page from the server">
+        <source>Your client does not have permission to get this page from the server</source>
+        <target>Votre client n'a pas l'autorisation d'obtenir cette page à partir du serveur</target>
+      </trans-unit>
+      <trans-unit id="kX7yL5T" resname="Bad request">
+        <source>Bad request</source>
+        <target>Mauvaise Demande</target>
+      </trans-unit>
+      <trans-unit id="Ky6ga_2" resname="Your client has issued a malformed or illegal request.">
+        <source>Your client has issued a malformed or illegal request.</source>
+        <target>Votre client a émis une demande incorrecte ou illégale.</target>
+      </trans-unit>
+      <trans-unit id="YLvwQ25" resname="Service unavailable">
+        <source>Service unavailable</source>
+        <target>Service unavailable</target>
+      </trans-unit>
+      <trans-unit id="aZD_Xr6" resname="The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again later.">
+        <source>The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again later.</source>
+        <target>Le serveur est temporairement incapable de répondre à votre demande en raison de temps d'arrêt de maintenance ou de problèmes de capacité. Veuillez réessayer plus tard.</target>
+      </trans-unit>
+      <trans-unit id="0InIqfw" resname="Unauthorized">
+        <source>Unauthorized</source>
+        <target>Non autorisé</target>
+      </trans-unit>
+      <trans-unit id="BL0vNSL" resname="Access to this resource is denied">
+        <source>Access to this resource is denied</source>
+        <target>L'accès à cette ressource est refusé</target>
+      </trans-unit>
+      <trans-unit id="4Ggue5z" resname="To log in">
+        <source>To log in</source>
+        <target>Se connecter</target>
+      </trans-unit>
+      <trans-unit id="9010RFH" resname="Internal server error">
+        <source>Internal server error</source>
+        <target>Erreur Interne du Serveur</target>
+      </trans-unit>
+      <trans-unit id="PAKwS0N" resname="The server encountered an internal error or misconfiguration and was unable to complete your request.">
+        <source>The server encountered an internal error or misconfiguration and was unable to complete your request.</source>
+        <target>Le serveur a rencontré une erreur interne ou une mauvaise configuration et n'a pas pu terminer votre demande.</target>
+      </trans-unit>
+      <trans-unit id="UG.zlGI" resname="Privacy Policy">
+        <source>Privacy Policy</source>
+        <target>Politique de confidentialité</target>
+      </trans-unit>
+      <trans-unit id="Fz9fnya" resname="Terms &amp; Conditions">
+        <source>Terms &amp; Conditions</source>
+        <target>Condition d'utilisation</target>
+      </trans-unit>
+      <trans-unit id="VKDowX6" resname="Error">
+        <source>Error</source>
+        <target>Erreur</target>
+      </trans-unit>
+      <trans-unit id="jMw.1Dq" resname="Expiration date">
+        <source>Expiration date</source>
+        <target>Date limite</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

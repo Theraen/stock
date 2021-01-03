@@ -3,14 +3,14 @@
     <head>
 
 
-        <title>{% block title %}Date limite !{% endblock %}</title>
+        <title>{% block title %}{% trans %}Expiration date{% endtrans %}{% endblock %}</title>
 
     <body id="page-top">
 
 
-    <p>Produit concerné : {{ vars.name ~ " " ~ vars.capacity ~ vars.unitMeasure }}</p>
-    <p>Quantité : {{ vars.quantity }}</p>
-    <p>DLC : {{ vars.dlc|date("d/m/Y") }}</p>
+    <p>{% trans %}Product concerned{% endtrans %} : {{ vars.name ~ " " ~ vars.capacity ~ vars.unitMeasure }}</p>
+    <p>{% trans %}Quantity{% endtrans %} : {{ vars.quantity }}</p>
+    <p>{% trans %}Shelf life{% endtrans %} : {{ vars.dlc|date("d/m/Y") }}</p>
     
     </body>
 </html>
