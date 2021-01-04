@@ -13,39 +13,46 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class RegistrationFormType extends AbstractType
 {
+    private $translator;
+
+    public function __construct(TranslatorInterface $translator) {
+        $this->translator = $translator;
+    }
+    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('email', EmailType::class, [
                'required' => true,
-               'label' => 'Email',
+               'label' => $this->translator->trans('Email'),
                'attr' => [
                    'class' => 'form-control-user',
                ]
             ])
             ->add('firstname', TextType::class, [
                 'required' => true,
-                'label' => 'Prénom',
+                'label' => $this->translator->trans('Firstname'),
                 'attr' => [
                     'class' => 'form-control-user',
                 ]
             ])
             ->add('lastname', TextType::class, [
                 'required' => true,
-                'label' => 'Nom',
+                'label' => $this->translator->trans('Lastname'),
                 'attr' => [
                     'class' => 'form-control-user',
                 ]
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
-                'label' => "Accepter les CGU",
+                'label' => $this->translator->trans('Accept the terms'),
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'Vous devez accepter les condition d\'utilisation',
+                        'message' => $this->translator->trans('You must accept the terms of use'),
                     ]),
                 ],
             ])
@@ -53,17 +60,17 @@ class RegistrationFormType extends AbstractType
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'label' => 'Mot de passe',
+                'label' => $this->translator->trans('Password'),
                 'attr' => [
                     'class' => 'form-control-user',
                 ],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Entrez un mot de passe',
+                        'message' => $this->translator->trans('Enter a password'),
                     ]),
                     new Length([
                         'min' => 8,
-                        'minMessage' => 'Le mot de passe doit contenir {{ limit }} minimum',
+                        'minMessage' => $this->translator->trans('The password must contain {{ limit }} characters minimum'),
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),

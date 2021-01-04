@@ -28,12 +28,11 @@ class StockController extends AbstractController
     {
         $this->em = $em;
         $this->productRepository = $productRepository;
-        $this->translator = $translator;
     }
     /**
      * @Route("/stock", name="stock")
      */
-    public function view(Request $request): Response
+    public function view(Request $request, UserInterface $user): Response
     {
         $dataProduct = new SearchProduct();
         $dataProduct->page = $request->get('page', 1);
@@ -41,7 +40,7 @@ class StockController extends AbstractController
         $form = $this->createForm(SearchProductType::class, $dataProduct);
         
         $form->handleRequest($request);
-        $products = $this->productRepository->findSearch($dataProduct);
+        $products = $this->productRepository->findSearch($dataProduct, $user);
 
  
 

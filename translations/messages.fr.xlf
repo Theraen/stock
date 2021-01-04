@@ -261,6 +261,102 @@
         <source>Expiration date</source>
         <target>Date limite</target>
       </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>Rechercher</target>
+      </trans-unit>
+      <trans-unit id="Y44kn0o" resname="Filter">
+        <source>Filter</source>
+        <target>Filtrer</target>
+      </trans-unit>
+      <trans-unit id="A0lK.UJ" resname="started">
+        <source>started</source>
+        <target>Entamé</target>
+      </trans-unit>
+      <trans-unit id="kK.JkWD" resname="shelf life">
+        <source>shelf life</source>
+        <target>DLC</target>
+      </trans-unit>
+      <trans-unit id="c93ZN8m" resname="Category name">
+        <source>Category name</source>
+        <target>Nom de la categorie</target>
+      </trans-unit>
+      <trans-unit id="KOb4cue" resname="Picture name">
+        <source>Picture name</source>
+        <target>Nom de l'image</target>
+      </trans-unit>
+      <trans-unit id="v6k_tNT" resname="Product name">
+        <source>Product name</source>
+        <target>Nom du produit</target>
+      </trans-unit>
+      <trans-unit id="5lM6g1r" resname="Consumption Deadline">
+        <source>Consumption Deadline</source>
+        <target>Date limite de consommation</target>
+      </trans-unit>
+      <trans-unit id="rmXQllU" resname="Capacity">
+        <source>Capacity</source>
+        <target>Contenance</target>
+      </trans-unit>
+      <trans-unit id="cthUdKd" resname="Unit of measure">
+        <source>Unit of measure</source>
+        <target>Unité de mesure</target>
+      </trans-unit>
+      <trans-unit id="KSwG8AR" resname="Category">
+        <source>Category</source>
+        <target>Catégorie</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>E-mail</target>
+      </trans-unit>
+      <trans-unit id="ZHz6kbI" resname="Firstname">
+        <source>Firstname</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="htiPHRy" resname="Lastname">
+        <source>Lastname</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="BO9SYYf" resname="Accept the terms">
+        <source>Accept the terms</source>
+        <target>Accepter les conditions d'utilisation</target>
+      </trans-unit>
+      <trans-unit id="xxs7Xnd" resname="You must accept the terms of use">
+        <source>You must accept the terms of use</source>
+        <target>Vous devez accepter les conditions d'utilisation</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="fJRBeoT" resname="Enter a password">
+        <source>Enter a password</source>
+        <target>Entrer un mot de passe</target>
+      </trans-unit>
+      <trans-unit id="LbvBpWt" resname="The password must contain {{ limit }} characters minimum">
+        <source>The password must contain {{ limit }} characters minimum</source>
+        <target>Le mot de passe doit contenir {{ limit }} caractères minimum</target>
+      </trans-unit>
+      <trans-unit id="_TJnqhH" resname="Remember me">
+        <source>Remember me</source>
+        <target>Se souvenir de moi</target>
+      </trans-unit>
+      <trans-unit id="I4igKjw" resname="Hi ! Confirm your email address !">
+        <source>Hi ! Confirm your email address !</source>
+        <target>Salut ! Confirmez votre adresse email !</target>
+      </trans-unit>
+      <trans-unit id="lyYsJaw" resname="Confirm your email address by clicking on the link below :">
+        <source>Confirm your email address by clicking on the link below :</source>
+        <target>Confirmez votre adresse e-mail en cliquant sur le lien ci-dessous :</target>
+      </trans-unit>
+      <trans-unit id="Km3zqsa" resname="Confirm my email address">
+        <source>Confirm my email address</source>
+        <target>Confirmer mon adresse e-mail</target>
+      </trans-unit>
+      <trans-unit id="g8XmPRu" resname="The link expires in 1 hour">
+        <source>The link expires in 1 hour</source>
+        <target>Le lien expire dans 1 heure</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

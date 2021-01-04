@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -16,6 +17,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class User implements UserInterface
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -85,10 +87,12 @@ class User implements UserInterface
      */
     private $isVerified = false;
 
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
         $this->logs = new ArrayCollection();
+
     }
 
     public function getId(): ?int

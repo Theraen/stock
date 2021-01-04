@@ -13,32 +13,40 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ProductType extends AbstractType
 {
+
+    private $translator;
+
+    public function __construct(TranslatorInterface $translator) {
+        $this->translator = $translator;
+    }
+    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('name', TextType::class, [
                 'required' => true,
-                'label' => 'Nom du produit',
+                'label' => $this->translator->trans('Product name'),
             ])
             ->add('quantity', IntegerType::class, [
                 'required' => true,
-                'label' => "Quantité",
+                'label' => $this->translator->trans('Quantity'),
             ])
             ->add('dlc', DateType::class, [
                 'required' => false,
-                'label' => 'Date Limite de Consomation',
+                'label' => $this->translator->trans('Consumption Deadline'),
                 'widget' => "single_text",
             ])
             ->add('capacity', IntegerType::class, [
                 'required' => true,
-                'label' => 'Contenance',
+                'label' => $this->translator->trans('Capacity'),
             ])
             ->add('unit_measure_capacity', ChoiceType::class, [
                 'required' => true,
-                'label' => 'Unité de mesure',
+                'label' => $this->translator->trans('Unit of measure'),
                 'attr' => [
                     'class' => 'selectpicker show-tick', 
                 ],
@@ -55,7 +63,7 @@ class ProductType extends AbstractType
                 ],
             ])
             ->add('category', EntityType::class, [
-                'label' => 'Categorie',
+                'label' => $this->translator->trans('Category'),
                 'class' => Category::class,
                 "multiple" => false,
                 'attr' => [
@@ -63,7 +71,7 @@ class ProductType extends AbstractType
                 ],
             ])
             ->add('pictureStock', EntityType::class, [
-                'label' => 'Image',
+                'label' => $this->translator->trans('Picture'),
                 'class' => PictureStock::class,
                 "multiple" => false,
                 'attr' => [
