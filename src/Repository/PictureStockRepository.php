@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\PictureStock;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @method PictureStock|null find($id, $lockMode = null, $lockVersion = null)
@@ -14,37 +15,35 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class PictureStockRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    private $paginator;
+
+    public function __construct(ManagerRegistry $registry, PaginatorInterface $paginator)
     {
         parent::__construct($registry, PictureStock::class);
+        $this->paginator = $paginator;
     }
 
-    // /**
-    //  * @return PictureStock[] Returns an array of PictureStock objects
-    //  */
-    /*
-    public function findByExampleField($value)
+        /**
+     * @return PictureStock[] Returns an array of Product objects
+     */
+    
+    public function findSearch($search, $user)
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $query = $this->createQueryBuilder('p')
+            ->andWhere('p.user = :u')
+            ->setParameter('u', $user);
 
-    /*
-    public function findOneBySomeField($value): ?PictureStock
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            if(!empty($search->q)) {
+                $query = $query
+                    ->andWhere('p.name LIKE :q')
+                    ->setParameter('q', "%{$search->q}%");
+            }
+            
+            $query =  $query->getQuery();
+            return $this->paginator->paginate(
+                $query,
+                $search->page,
+                12
+            );
     }
-    */
 }

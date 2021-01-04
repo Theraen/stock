@@ -16,20 +16,32 @@
             
         </div>
     </div>
-
+ 
     <div class="row">
-    {% for picture in pictures %}
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card">
-                <img src="{{ asset('uploads/picture/product/' ~ picture.picture) }}" alt="" width="100%">
-                <div class="card-body">
-                    <h5 class="card-title">{{ picture.name }}</h5>
-
-                        <a href="{{ path('picture_product_delete', {id: picture.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                </div>
+        <div class="col-lg-3">
+            {{ form_start(form, {attr: {class: 'filter'}}) }}
+                {{ form_row(form.q) }}
+                <button type="submit" class="btn btn-primary btn-block">{% trans %}Filter{% endtrans %} </button>
+            {{ form_end(form) }}
+        </div>
+        <div class="col-lg-9">
+            <div class="row">
+                {% for picture in pictures %}
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card">
+                            <img src="{{ asset('uploads/picture/product/' ~ picture.picture) }}" alt="" width="100%">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ picture.name }}</h5>
+                                    <a href="{{ path('picture_product_delete', {id: picture.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>   
+            <div class="float-right">
+                {{ knp_pagination_render(pictures) }}
             </div>
         </div>
-    {% endfor %}
     </div>
     
 

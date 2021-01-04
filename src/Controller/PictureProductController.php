@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Data\SearchPicture;
 use App\Entity\PictureStock;
 use App\Form\PictureProductType;
+use App\Form\SearchPictureType;
 use App\Repository\PictureStockRepository;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
@@ -34,13 +36,21 @@ class PictureProductController extends AbstractController
     /**
      * @Route("/picture", name="picture_product")
      */
-    public function view(): Response
+    public function view(Request $request, UserInterface $user): Response
     {
+        $dataPicture = new SearchPicture();
+        $dataPicture->page = $request->get('page', 1);
 
-        $pictures = $this->pictureStockRepository->findAll();
+        $form = $this->createForm(SearchPictureType::class, $dataPicture);
+        
+        $form->handleRequest($request);
+
+        $pictures = $this->pictureStockRepository->findSearch($dataPicture, $user);
+
 
         return $this->render('picture_product/index.html.twig', [
             'pictures' => $pictures,
+            'form' => $form->createView(),
         ]);
     }
 
