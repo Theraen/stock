@@ -42,11 +42,6 @@
                                         {% if error %}
                                             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                                         {% endif %}
-                                        {% if app.user %}
-                                            <div class="mb-3">
-                                                {% trans %}You are already connected with{% endtrans %}{{ app.user.username }}, <a href="{{ path('app_logout') }}">{% trans %}Logout{% endtrans %}</a>
-                                            </div>
-                                        {% endif %}
 
                                         <h1 class="h3 mb-3 font-weight-normal">{% trans %}Connect yourself{% endtrans %}</h1>
                                         <div class="form-group">

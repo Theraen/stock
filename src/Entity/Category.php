@@ -39,6 +39,12 @@ class Category
      */
     private $updated_at;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="categories")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
  
 
     public function __construct()
@@ -117,6 +123,18 @@ class Category
     public function setUpdatedAt(?\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

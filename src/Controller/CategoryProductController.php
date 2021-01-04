@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class CategoryProductController extends AbstractController
@@ -43,7 +44,7 @@ class CategoryProductController extends AbstractController
     /**
      * @Route("/category/add", name="category_product_add")
      */
-    public function add(Request $request): Response
+    public function add(Request $request, UserInterface $user): Response
     {
         $category = new Category;
 
@@ -53,6 +54,8 @@ class CategoryProductController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $category->setCreatedAt(new DateTime());
+
+            $category->setUser($user);
 
             $this->em->persist($category);
             $this->em->flush();

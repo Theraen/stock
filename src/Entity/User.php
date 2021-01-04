@@ -87,11 +87,23 @@ class User implements UserInterface
      */
     private $isVerified = false;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Category::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $categories;
+
+    /**
+     * @ORM\OneToMany(targetEntity=PictureStock::class, mappedBy="user")
+     */
+    private $pictureStocks;
+
 
     public function __construct()
     {
         $this->products = new ArrayCollection();
         $this->logs = new ArrayCollection();
+        $this->categories = new ArrayCollection();
+        $this->pictureStocks = new ArrayCollection();
 
     }
 
@@ -273,6 +285,66 @@ class User implements UserInterface
     {
         if(!in_array($roles, $this->roles)) {
             $this->roles[] = $roles;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Category[]
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Category $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+            $category->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Category $category): self
+    {
+        if ($this->categories->removeElement($category)) {
+            // set the owning side to null (unless already changed)
+            if ($category->getUser() === $this) {
+                $category->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|PictureStock[]
+     */
+    public function getPictureStocks(): Collection
+    {
+        return $this->pictureStocks;
+    }
+
+    public function addPictureStock(PictureStock $pictureStock): self
+    {
+        if (!$this->pictureStocks->contains($pictureStock)) {
+            $this->pictureStocks[] = $pictureStock;
+            $pictureStock->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePictureStock(PictureStock $pictureStock): self
+    {
+        if ($this->pictureStocks->removeElement($pictureStock)) {
+            // set the owning side to null (unless already changed)
+            if ($pictureStock->getUser() === $this) {
+                $pictureStock->setUser(null);
+            }
         }
 
         return $this;

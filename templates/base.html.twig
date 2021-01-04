@@ -52,6 +52,25 @@
                     <i class="fas fa-fw fa-blender"></i>
                     <span>{% trans %}Recipes{% endtrans %}</span></a>
             </li>
+                <hr class="sidebar-divider my-0">
+
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item {% if route == "picture_product" or route == "picture_product_add" or route == "category_product" or route == "category_product_add" %}active{% endif %}">
+                    <a class="nav-link" href="#" data-toggle="collapse" data-target="#parameters" aria-expanded="true"
+                        aria-controls="collapseTwo">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>{% trans %}Settings{% endtrans %}</span>
+                    </a>
+                    <div id="parameters" class="collapse {% if route == "picture_product" or route == "picture_product_add" or route == "category_product" or route == "category_product_add" %}show{% endif %}"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">{% trans %}Product settings {% endtrans %} :</h6>
+                            <a class="collapse-item {% if route == "picture_product" or route == "picture_product_add" %}active{% endif %}" href="{{ path('picture_product') }}">{% trans %}Product picture{% endtrans %}</a>
+                            <a class="collapse-item {% if route == "category_product" or route == "category_product_add" %}active{% endif %}" href="{{ path('category_product') }}">{% trans %}Product categories{% endtrans %}</a>
+                            
+                        </div>
+                    </div>
+                </li>
             {% if is_granted('ROLE_ADMIN') %}
                 <hr class="sidebar-divider my-0">
 

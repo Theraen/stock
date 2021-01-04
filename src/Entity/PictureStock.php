@@ -44,6 +44,11 @@ class PictureStock
      */
     private $updated_at;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="pictureStocks")
+     */
+    private $user;
+
     public function __construct()
     {
         $this->product = new ArrayCollection();
@@ -132,6 +137,18 @@ class PictureStock
     public function setUpdatedAt(?\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

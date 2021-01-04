@@ -28,9 +28,10 @@ class StockController extends AbstractController
     {
         $this->em = $em;
         $this->productRepository = $productRepository;
+        $this->translator = $translator;
     }
     /**
-     * @Route("/stock", name="stock")
+     * @Route("/supply", name="stock")
      */
     public function view(Request $request, UserInterface $user): Response
     {

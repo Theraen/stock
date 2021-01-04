@@ -121,10 +121,6 @@
         <source>Login</source>
         <target>S'identifier</target>
       </trans-unit>
-      <trans-unit id="30hk3SB" resname="You are already connected with">
-        <source>You are already connected with</source>
-        <target>Vous êtes déjà connecté avec</target>
-      </trans-unit>
       <trans-unit id="EVedc_9" resname="Connect yourself">
         <source>Connect yourself</source>
         <target>Connectez-vous</target>

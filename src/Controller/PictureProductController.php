@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
@@ -46,7 +47,7 @@ class PictureProductController extends AbstractController
     /**
      * @Route("/picture/add", name="picture_product_add")
      */
-    public function add(Request $request, SluggerInterface $slugger): Response
+    public function add(Request $request, SluggerInterface $slugger, UserInterface $user): Response
     {
         $picture = new PictureStock;
 
@@ -76,6 +77,8 @@ class PictureProductController extends AbstractController
                 }
                 $picture->setPicture($newFilename);
             }
+
+            $picture->setUser($user);
 
             $this->em->persist($picture);
             $this->em->flush();
