@@ -43,4 +43,4 @@ security:
         - { path: ^/category, roles: ROLE_USER }
         - { path: ^/log, roles: ROLE_USER }
         - { path: ^/picture, roles: ROLE_USER }
-        - { path: ^/stock, roles: ROLE_USER }
+        - { path: ^/supply, roles: ROLE_USER }

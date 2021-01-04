@@ -53,7 +53,7 @@ class StockController extends AbstractController
 
 
     /**
-     * @Route("/stock/add", name="stock_add")
+     * @Route("/supply/add", name="stock_add")
      */
     public function add(Request $request, UserInterface $user): Response
     {
@@ -82,7 +82,7 @@ class StockController extends AbstractController
     }
 
     /**
-     * @Route("/stock/update/{id}", name="stock_update")
+     * @Route("/supply/update/{id}", name="stock_update")
      */
     public function update(Request $request, Product $product): Response
     {
@@ -106,7 +106,7 @@ class StockController extends AbstractController
     }
 
     /**
-     * @Route("/stock/update/{plusOrMinus}/{id}", name="stock_update_qte")
+     * @Route("/supply/update/{plusOrMinus}/{id}", name="stock_update_qte")
      */
     public function updateQte(Request $request, Product $product): Response
     {
@@ -137,7 +137,7 @@ class StockController extends AbstractController
     }
 
     /**
-     * @Route("/stock/checkDlc", name="stock_check_dlc")
+     * @Route("/supply/checkDlc", name="stock_check_dlc")
      */
     public function checkDlc(Mailer $mailer): Response
     {
@@ -199,7 +199,7 @@ class StockController extends AbstractController
     }
 
     /**
-     * @Route("/stock/started/{id}", name="stock_started")
+     * @Route("/supply/started/{id}", name="stock_started")
      */
     public function started(Product $product): Response
     {
