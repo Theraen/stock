@@ -365,32 +365,9 @@
         <source>In force on</source>
         <target>En vigueur au</target>
       </trans-unit>
-      <trans-unit id="p.LcSY2" resname="The purpose of these General Conditions of Use (referred to as &quot;TOU&quot;) is to provide legal framework for&#10;            modalities for the provision of the site and services by Mr. BARRAUD and to define the conditions &#10;            access and use of services by the “User”.">
-        <source>The purpose of these General Conditions of Use (referred to as "TOU") is to provide legal framework for
-            modalities for the provision of the site and services by Mr. BARRAUD and to define the conditions 
-            access and use of services by the “User”.</source>
-        <target>Les présentes conditions générales d'utilisation (dites « CGU ») ont pour objet l'encadrement juridique des
-                modalités de mise à disposition du site et des services par M. BARRAUD et de définir les conditions
-                d’accès et d’utilisation des services par « l'Utilisateur »..</target>
-      </trans-unit>
       <trans-unit id="csMVeBI" resname="These TOU are accessible on the website under the heading «Terms &amp; Conditions».">
         <source>These TOU are accessible on the website under the heading «Terms &amp; Conditions».</source>
         <target>Les présentes CGU sont accessibles sur le site à la rubrique «Conditions Générales d'Utilisation».</target>
-      </trans-unit>
-      <trans-unit id="mQys07v" resname="Any registration or use of the site implies the acceptance without any reservation or restriction of &#10;            the CGU by the user. When registering on the site via the registration form, each user expressly accepts these Terms&#10;             and Conditions by ticking the box preceding the following text: «Accept the General Terms and Conditions».">
-        <source>Any registration or use of the site implies the acceptance without any reservation or restriction of 
-            the CGU by the user. When registering on the site via the registration form, each user expressly accepts these Terms
-             and Conditions by ticking the box preceding the following text: «Accept the General Terms and Conditions».</source>
-        <target>Toute inscription ou utilisation du site implique l'acceptation sans aucune réserve ni restriction des présentes
-                CGU par l’utilisateur. Lors de l'inscription sur le site via le Formulaire d’inscription, chaque utilisateur
-                accepte expressément les présentes CGU en cochant la case précédant le texte suivant : « Accepter les Conditions 
-                Générales d'Utilisation ».</target>
-      </trans-unit>
-      <trans-unit id="xUHC5jE" resname="In case of non-acceptance of the TOU stipulated in this contract, the user must waive access to &#10;            the services offered by the site.">
-        <source>In case of non-acceptance of the TOU stipulated in this contract, the user must waive access to 
-            the services offered by the site.</source>
-        <target>En cas de non-acceptation des CGU stipulées dans le présent contrat, l'Utilisateur se doit de renoncer à
-                l'accès des services proposés par le site.</target>
       </trans-unit>
       <trans-unit id="Z_jrkvw" resname="cook.quentin.dev reserves the right to unilaterally and at any time modify the content of these TOU.">
         <source>cook.quentin.dev reserves the right to unilaterally and at any time modify the content of these TOU.</source>
@@ -413,136 +390,18 @@
         <source>Management of stocks, management of recipes</source>
         <target>Gestion de ses stocks, gestions de ses recettes</target>
       </trans-unit>
-      <trans-unit id="vmYI5i7" resname="The site is accessible free of charge in any place to any User with Internet access. All fees supported&#10;        by the User to access the service (hardware, software, Internet connection, etc.) are at his expense.">
-        <source>The site is accessible free of charge in any place to any User with Internet access. All fees supported
-        by the User to access the service (hardware, software, Internet connection, etc.) are at his expense.</source>
-        <target>Le site est accessible gratuitement en tout lieu à tout Utilisateur ayant un accès à Internet. Tous les frais
-        supportés par l'Utilisateur pour accéder au service (matériel informatique, logiciels, connexion Internet, etc.)
-        sont à sa charge.</target>
-      </trans-unit>
-      <trans-unit id="CbdHJM8" resname="The non-member User does not have access to the reserved services. To do so, he must register by completing the&#10;        form. By agreeing to subscribe to the reserved services, the Member User agrees to provide&#10;        honest and accurate information about his marital status and contact details, including his email address.">
-        <source>The non-member User does not have access to the reserved services. To do so, he must register by completing the
-        form. By agreeing to subscribe to the reserved services, the Member User agrees to provide
-        honest and accurate information about his marital status and contact details, including his email address.</source>
-        <target>L’Utilisateur non membre n'a pas accès aux services réservés. Pour cela, il doit s’inscrire en remplissant le
-        formulaire. En acceptant de s’inscrire aux services réservés, l’Utilisateur membre s’engage à fournir des
-        informations sincères et exactes concernant son état civil et ses coordonnées, notamment son adresse email.</target>
-      </trans-unit>
       <trans-unit id="4pdjA7." resname="To access the services, the User must then identify himself using his username and password.">
         <source>To access the services, the User must then identify himself using his username and password.</source>
         <target>Pour accéder aux services, l’Utilisateur doit ensuite s'identifier à l'aide de son identifiant et de son mot de
         passe.</target>
       </trans-unit>
-      <trans-unit id="08IdIr5" resname="Any regularly registered Member User may also request to be unsubscribed by going to the&#10;        dedicated page on his personal space. It will be effective within a reasonable time.">
-        <source>Any regularly registered Member User may also request to be unsubscribed by going to the
-        dedicated page on his personal space. It will be effective within a reasonable time.</source>
-        <target>Tout Utilisateur membre régulièrement inscrit pourra également solliciter sa désinscription en se rendant à la
-        page dédiée sur son espace personnel. Celle-ci sera effective dans un délai raisonnable.</target>
-      </trans-unit>
-      <trans-unit id="TMFGNlT" resname="Any event due to force majeure resulting in a malfunction of the site or&#10;        server and subject to any interruption or modification in case of maintenance, does not engage the&#10;        responsibility of cook.quentin.dev. In these cases, the User thus agrees not to hold the editor accountable&#10;        any interruption or suspension of service, even without notice.">
-        <source>Any event due to force majeure resulting in a malfunction of the site or
-        server and subject to any interruption or modification in case of maintenance, does not engage the
-        responsibility of cook.quentin.dev. In these cases, the User thus agrees not to hold the editor accountable
-        any interruption or suspension of service, even without notice.</source>
-        <target>Tout événement dû à un cas de force majeure ayant pour conséquence un dysfonctionnement du site ou
-        serveur et sous réserve de toute interruption ou modification en cas de maintenance, n'engage pas la
-        responsabilité de cook.quentin.dev. Dans ces cas, l’Utilisateur accepte ainsi ne pas tenir rigueur à l’éditeur
-        de toute interruption ou suspension de service, même sans préavis.</target>
-      </trans-unit>
-      <trans-unit id="cx__76W" resname="The User has the possibility to contact the site by email to the email address of the editor&#10;        press release on legal notices.">
-        <source>The User has the possibility to contact the site by email to the email address of the editor
-        press release on legal notices.</source>
-        <target>L'Utilisateur a la possibilité de contacter le site par messagerie électronique à l’adresse email de l’éditeur
-        communiqué sur les mentions légales.</target>
-      </trans-unit>
       <trans-unit id="wM6Y79o" resname="ARTICLE 2: Data Collection">
         <source>ARTICLE 2: Data Collection</source>
         <target>ARTICLE 2 : Collecte des données</target>
       </trans-unit>
-      <trans-unit id="CMmQbku" resname="The site ensures to the User a collection and processing of personal information in compliance with the&#10;        privacy in accordance with Law No. 78-17 of 6 January 1978 on data processing, files and&#10;        freedoms and regulation no. 2016/679 (GDPR) of 25 May 2018.">
-        <source>The site ensures to the User a collection and processing of personal information in compliance with the
-        privacy in accordance with Law No. 78-17 of 6 January 1978 on data processing, files and
-        freedoms and regulation no. 2016/679 (GDPR) of 25 May 2018.</source>
-        <target>Le site assure à l'Utilisateur une collecte et un traitement d'informations personnelles dans le respect de la
-        vie privée conformément à la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux
-        libertés ainsi que le réglement n°2016/679 (RGPD) du 25 mai 2018.</target>
-      </trans-unit>
-      <trans-unit id="k_ayAQF" resname="Under the Data Protection Act, dated January 6, 1978 and the GDPR dated May 25, 2018, the User has a right of access,&#10;        rectification, deletion and opposition of personal data. The User exercises this right by e-mail to contact@quentin.dev.">
-        <source>Under the Data Protection Act, dated January 6, 1978 and the GDPR dated May 25, 2018, the User has a right of access,
-        rectification, deletion and opposition of personal data. The User exercises this right by e-mail to contact@quentin.dev.</source>
-        <target>En vertu de la loi Informatique et Libertés, en date du 6 janvier 1978, l'Utilisateur dispose d'un droit d'accès,
-        de rectification, de suppression et d'opposition de ses données personnelles. L'Utilisateur exerce ce droit par mail à 
-        l'adresse mail contact@quentin.dev</target>
-      </trans-unit>
       <trans-unit id="UH6slCf" resname="ARTICLE 3: Intellectual Property">
         <source>ARTICLE 3: Intellectual Property</source>
         <target>ARTICLE 3 : Propriété intellectuelle</target>
-      </trans-unit>
-      <trans-unit id="0mrsdU2" resname="Trademarks, logos, signs and all content of the site (texts, images, sound, etc.) are subject to a&#10;        protection by the Intellectual Property Code and more particularly by copyright.">
-        <source>Trademarks, logos, signs and all content of the site (texts, images, sound, etc.) are subject to a
-        protection by the Intellectual Property Code and more particularly by copyright.</source>
-        <target>Les marques, logos, signes ainsi que tous les contenus du site (textes, images, son…) font l'objet d'une
-        protection par le Code de la propriété intellectuelle et plus particulièrement par le droit d'auteur.</target>
-      </trans-unit>
-      <trans-unit id="0UD5qFM" resname="The User must request the prior authorization of the site for any reproduction, publication, copy of&#10;        content. It undertakes to use the content of the site in a strictly private context, any&#10;        use for commercial and advertising purposes is strictly prohibited.">
-        <source>The User must request the prior authorization of the site for any reproduction, publication, copy of
-        content. It undertakes to use the content of the site in a strictly private context, any
-        use for commercial and advertising purposes is strictly prohibited.</source>
-        <target>L'Utilisateur doit solliciter l'autorisation préalable du site pour toute reproduction, publication, copie des
-        différents contenus. Il s'engage à une utilisation des contenus du site dans un cadre strictement privé, toute
-        utilisation à des fins commerciales et publicitaires est strictement interdite.</target>
-      </trans-unit>
-      <trans-unit id="EUkf0cO" resname="Any total or partial representation of this site by any means, without permission&#10;        the operator of the website would constitute an infringement sanctioned by article L 335-2 and&#10;        of the Intellectual Property Code.">
-        <source>Any total or partial representation of this site by any means, without permission
-        the operator of the website would constitute an infringement sanctioned by article L 335-2 and
-        of the Intellectual Property Code.</source>
-        <target>Toute représentation totale ou partielle de ce site par quelque procédé que ce soit, sans l’autorisation
-        expresse de l’exploitant du site Internet constituerait une contrefaçon sanctionnée par l’article L 335-2 et
-        suivants du Code de la propriété intellectuelle.</target>
-      </trans-unit>
-      <trans-unit id="LaqXhR." resname="It is recalled in accordance with article L122-5 of the Intellectual Property Code that the User who&#10;        reproduce, copy or publish the copyrighted content must cite the author and its source.">
-        <source>It is recalled in accordance with article L122-5 of the Intellectual Property Code that the User who
-        reproduce, copy or publish the copyrighted content must cite the author and its source.</source>
-        <target>Il est rappelé conformément à l’article L122-5 du Code de propriété intellectuelle que l’Utilisateur qui
-        reproduit, copie ou publie le contenu protégé doit citer l’auteur et sa source.</target>
-      </trans-unit>
-      <trans-unit id="RfRaMLH" resname="The sources of the information on cook.quentin.dev are considered reliable but the site does not&#10;        does not guarantee that it is free from defects, errors or omissions.">
-        <source>The sources of the information on cook.quentin.dev are considered reliable but the site does not
-        does not guarantee that it is free from defects, errors or omissions.</source>
-        <target>Les sources des informations diffusées sur le site cook.quentin.dev sont réputées fiables mais le site ne
-        garantit pas qu’il soit exempt de défauts, d’erreurs ou d’omissions.</target>
-      </trans-unit>
-      <trans-unit id="DO0XTd3" resname="The information provided is indicative and general and does not have any contractual value. Despite&#10;        regular updates, the site cook.quentin.dev cannot be held responsible for the modification of the&#10;        administrative and legal provisions arising after publication. Similarly, the site may not be kept&#10;        responsible for the use and interpretation of the information contained on this site.">
-        <source>The information provided is indicative and general and does not have any contractual value. Despite
-        regular updates, the site cook.quentin.dev cannot be held responsible for the modification of the
-        administrative and legal provisions arising after publication. Similarly, the site may not be kept
-        responsible for the use and interpretation of the information contained on this site.</source>
-        <target>Les informations communiquées sont présentées à titre indicatif et général sans valeur contractuelle. Malgré
-        des mises à jour régulières, le site cook.quentin.dev ne peut être tenu responsable de la modification des
-        dispositions administratives et juridiques survenant après la publication. De même, le site ne peut être tenue
-        responsable de l’utilisation et de l’interprétation de l’information contenue dans ce site.</target>
-      </trans-unit>
-      <trans-unit id="4GI4oBu" resname="The User ensures to keep his password secret. Any disclosure of the password, whatever&#10;        its form is prohibited. It assumes the risks associated with the use of its username and password.&#10;        The site declines all responsibility.">
-        <source>The User ensures to keep his password secret. Any disclosure of the password, whatever
-        its form is prohibited. It assumes the risks associated with the use of its username and password.
-        The site declines all responsibility.</source>
-        <target>L'Utilisateur s'assure de garder son mot de passe secret. Toute divulgation du mot de passe, quelle que
-        soit sa forme, est interdite. Il assume les risques liés à l'utilisation de son identifiant et mot de passe.
-        Le site décline toute responsabilité.</target>
-      </trans-unit>
-      <trans-unit id="le9zIPo" resname="The site cook.quentin.dev cannot be held responsible for possible viruses that could infect&#10;        the computer or any computer equipment of the User, following use, access, or&#10;        download from this site.">
-        <source>The site cook.quentin.dev cannot be held responsible for possible viruses that could infect
-        the computer or any computer equipment of the User, following use, access, or
-        download from this site.</source>
-        <target>Le site cook.quentin.dev ne peut être tenu pour responsable d’éventuels virus qui pourraient infecter
-        l’ordinateur ou tout matériel informatique de l’Internaute, suite à une utilisation, à l’accès, ou au
-        téléchargement provenant de ce site.</target>
-      </trans-unit>
-      <trans-unit id="IPSG3ye" resname="The site cannot be held liable in case of force majeure or unforeseeable event and&#10;        insurmountable by one third.">
-        <source>The site cannot be held liable in case of force majeure or unforeseeable event and
-        insurmountable by one third.</source>
-        <target>La responsabilité du site ne peut être engagée en cas de force majeure ou du fait imprévisible et
-        insurmontable d'un tiers.</target>
       </trans-unit>
       <trans-unit id="mTz3tom" resname="ARTICLE 4: Liability">
         <source>ARTICLE 4: Liability</source>
@@ -552,37 +411,11 @@
         <source>ARTICLE 5: Hyperlinks</source>
         <target>ARTICLE 5: Liens hypertextes</target>
       </trans-unit>
-      <trans-unit id="QXDX_1G" resname="Hypertext links may be present on the site. The User is informed that by clicking on these links,&#10;        it will come out of the cook.quentin.dev site. The latter has no control over the web pages on which end up&#10;        these links and cannot, under any circumstances, be responsible for their content.">
-        <source>Hypertext links may be present on the site. The User is informed that by clicking on these links,
-        it will come out of the cook.quentin.dev site. The latter has no control over the web pages on which end up
-        these links and cannot, under any circumstances, be responsible for their content.</source>
-        <target>Des liens hypertextes peuvent être présents sur le site. L’Utilisateur est informé qu’en cliquant sur ces liens,
-        il sortira du site cook.quentin.dev. Ce dernier n’a pas de contrôle sur les pages web sur lesquelles aboutissent
-        ces liens et ne saurait, en aucun cas, être responsable de leur contenu.</target>
-      </trans-unit>
       <trans-unit id="IQivMar" resname="ARTICLE 6: Cookies">
         <source>ARTICLE 6: Cookies</source>
         <target>ARTICLE 6: Cookies</target>
       </trans-unit>
-      <trans-unit id="7vK8H7z" resname="The User is informed that during his visits to the site, a cookie can be set automatically on&#10;        its navigation software.">
-        <source>The User is informed that during his visits to the site, a cookie can be set automatically on
-        its navigation software.</source>
-        <target>L’Utilisateur est informé que lors de ses visites sur le site, un cookie peut s’installer automatiquement sur
-        son logiciel de navigation.</target>
-      </trans-unit>
-      <trans-unit id="C2UhlkN" resname="Cookies are small files temporarily stored on the hard drive of the User’s computer&#10;        by your browser and are necessary for the use of the site cook.quentin.dev. Cookies do not&#10;        contain no personal information and cannot be used to identify someone. A&#10;        cookie contains a unique identifier, generated randomly and thus anonymous. Some cookies expire at the&#10;        end of the User’s visit, others remain.">
-        <source>Cookies are small files temporarily stored on the hard drive of the User’s computer
-        by your browser and are necessary for the use of the site cook.quentin.dev. Cookies do not
-        contain no personal information and cannot be used to identify someone. A
-        cookie contains a unique identifier, generated randomly and thus anonymous. Some cookies expire at the
-        end of the User’s visit, others remain.</source>
-        <target>Les cookies sont de petits fichiers stockés temporairement sur le disque dur de l’ordinateur de l’Utilisateur
-        par votre navigateur et qui sont nécessaires à l’utilisation du site cook.quentin.dev. Les cookies ne
-        contiennent pas d’information personnelle et ne peuvent pas être utilisés pour identifier quelqu’un. Un
-        cookie contient un identifiant unique, généré aléatoirement et donc anonyme. Certains cookies expirent à la
-        fin de la visite de l’Utilisateur, d’autres restent.</target>
-      </trans-unit>
-      <trans-unit id="KJcaOzq" resname="The information contained in the cookies is used to improve the cook.quentin.dev website.">
+      <trans-unit id="rJqYDQW" resname="The information contained in the cookies is used to improve the cook.quentin.dev website.">
         <source>The information contained in the cookies is used to improve the cook.quentin.dev website.</source>
         <target>L’information contenue dans les cookies est utilisée pour améliorer le site cook.quentin.dev.</target>
       </trans-unit>
@@ -594,33 +427,165 @@
         <source>However, the User must consent to the use of certain cookies.</source>
         <target>L’Utilisateur doit toutefois donner son consentement quant à l’utilisation de certains cookies.</target>
       </trans-unit>
-      <trans-unit id="Hhb3Vzg" resname="Failing acceptance, the User is informed that certain features or pages may be&#10;        refused.">
-        <source>Failing acceptance, the User is informed that certain features or pages may be
-        refused.</source>
-        <target>A défaut d’acceptation, l’Utilisateur est informé que certaines fonctionnalités ou pages risquent de lui être
-        refusées.</target>
-      </trans-unit>
-      <trans-unit id="n..yWhg" resname="The User may disable these cookies via the settings within his&#10;        navigation software.">
-        <source>The User may disable these cookies via the settings within his
-        navigation software.</source>
-        <target>L’Utilisateur pourra désactiver ces cookies par l’intermédiaire des paramètres figurant au sein de son
-        logiciel de navigation.</target>
-      </trans-unit>
       <trans-unit id="5Ot7WxO" resname="ARTICLE 7: Applicable law and jurisdiction competent">
         <source>ARTICLE 7: Applicable law and jurisdiction competent</source>
         <target>ARTICLE 7: Droit applicable et juridiction compétente</target>
       </trans-unit>
-      <trans-unit id="0o7H02T" resname="The French legislation applies to this contract. In the event of no amicable resolution of a dispute arising&#10;        between the parties, the French courts shall have sole jurisdiction to determine the case.">
-        <source>The French legislation applies to this contract. In the event of no amicable resolution of a dispute arising
-        between the parties, the French courts shall have sole jurisdiction to determine the case.</source>
-        <target>La législation française s'applique au présent contrat. En cas d'absence de résolution amiable d'un litige né
-        entre les parties, les tribunaux français seront seuls compétents pour en connaître.</target>
+      <trans-unit id="WoBKTac" resname="If you have any questions regarding the application of these TOU, you can contact the contact details on the legal notice.">
+        <source>If you have any questions regarding the application of these TOU, you can contact the contact details on the legal notice.</source>
+        <target>Pour toute question relative à l’application des présentes CGU, vous pouvez joindre l’éditeur aux coordonnées inscrites sur les mentions légales.</target>
       </trans-unit>
-      <trans-unit id="dYCTB55" resname="If you have any questions regarding the application of these TOU, you can contact the&#10;        contact details on the legal notice.">
-        <source>If you have any questions regarding the application of these TOU, you can contact the
-        contact details on the legal notice.</source>
-        <target>Pour toute question relative à l’application des présentes CGU, vous pouvez joindre l’éditeur aux
-        coordonnées inscrites sur les mentions légales.</target>
+      <trans-unit id=".f1B3nr" resname="Forgot Password">
+        <source>Forgot Password</source>
+        <target>Mot de passe oublié</target>
+      </trans-unit>
+      <trans-unit id="C7ioRXH" resname="Forgot Your Password ?">
+        <source>Forgot Your Password ?</source>
+        <target>Mot de passe oublié ?</target>
+      </trans-unit>
+      <trans-unit id="drvZVpm" resname="We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password !">
+        <source>We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password !</source>
+        <target>Il suffit d’entrer votre adresse email ci-dessous et nous vous enverrons un lien pour réinitialiser votre mot de passe ! !</target>
+      </trans-unit>
+      <trans-unit id="hN_611T" resname="Create an account !">
+        <source>Create an account !</source>
+        <target>Créer un compte !</target>
+      </trans-unit>
+      <trans-unit id="U28cTzJ" resname="Password Reset Email Sent">
+        <source>Password Reset Email Sent</source>
+        <target>Email de réinitialisation de mot de passe envoyé</target>
+      </trans-unit>
+      <trans-unit id="bs9avOq" resname="If you don't receive an email please check your spam folder or">
+        <source>If you don't receive an email please check your spam folder or</source>
+        <target>Si vous ne recevez pas de courriel, vérifiez votre dossier de spam ou</target>
+      </trans-unit>
+      <trans-unit id="W13t7jL" resname="try again">
+        <source>try again</source>
+        <target>réessayer</target>
+      </trans-unit>
+      <trans-unit id="2xSqf64" resname="Hi !">
+        <source>Hi !</source>
+        <target>Salut</target>
+      </trans-unit>
+      <trans-unit id="vQH5j0c" resname="To reset your password, please visit the following link">
+        <source>To reset your password, please visit the following link</source>
+        <target>Pour réinitialiser votre mot de passe, veuillez consulter le lien suivant :</target>
+      </trans-unit>
+      <trans-unit id="Ql99G2F" resname="This link will expire in 1 hour">
+        <source>This link will expire in 1 hour</source>
+        <target>Ce lien expirera dans 1 heure</target>
+      </trans-unit>
+      <trans-unit id="4O3_s6c" resname="Reset password">
+        <source>Reset password</source>
+        <target>Réinitialiser le mot de passe</target>
+      </trans-unit>
+      <trans-unit id="_6RZSvB" resname="An email has been sent that contains a link that you can click to reset your password. This link will expire in 1 hour">
+        <source>An email has been sent that contains a link that you can click to reset your password. This link will expire in 1 hour</source>
+        <target>Un courriel contenant un lien que vous pouvez cliquer pour réinitialiser votre mot de passe a été envoyé. Ce lien expirera dans une heure.</target>
+      </trans-unit>
+      <trans-unit id="Q0C9Fbg" resname="Connect yourself !">
+        <source>Connect yourself !</source>
+        <target>Connectez vous !</target>
+      </trans-unit>
+      <trans-unit id="kXrYaRa" resname="The purpose of these General Conditions of Use (referred to as &quot;TOU&quot;) is to provide legal framework for modalities for the provision of the site and services by Mr. BARRAUD and to define the conditions access and use of services by the “User”.">
+        <source>The purpose of these General Conditions of Use (referred to as "TOU") is to provide legal framework for modalities for the provision of the site and services by Mr. BARRAUD and to define the conditions access and use of services by the “User”.</source>
+        <target>Les présentes conditions générales d'utilisation (dites « CGU ») ont pour objet l'encadrement juridique des modalités de mise à disposition du site et des services par M. BARRAUD et de définir les conditions d’accès et d’utilisation des services par « l'Utilisateur ».</target>
+      </trans-unit>
+      <trans-unit id="jqQqWB_" resname="Any registration or use of the site implies the acceptance without any reservation or restriction of the CGU by the user. When registering on the site via the registration form, each user expressly accepts these Terms and Conditions by ticking the box preceding the following text: «Accept the General Terms and Conditions».">
+        <source>Any registration or use of the site implies the acceptance without any reservation or restriction of the CGU by the user. When registering on the site via the registration form, each user expressly accepts these Terms and Conditions by ticking the box preceding the following text: «Accept the General Terms and Conditions».</source>
+        <target>Toute inscription ou utilisation du site implique l'acceptation sans aucune réserve ni restriction des présentes CGU par l’utilisateur. Lors de l'inscription sur le site via le Formulaire d’inscription, chaque utilisateur accepte expressément les présentes CGU en cochant la case précédant le texte suivant : « Accepter les Conditions Générales d'Utilisation ».</target>
+      </trans-unit>
+      <trans-unit id="zKj5zFk" resname="In case of non-acceptance of the TOU stipulated in this contract, the user must waive access to the services offered by the site.">
+        <source>In case of non-acceptance of the TOU stipulated in this contract, the user must waive access to the services offered by the site.</source>
+        <target>En cas de non-acceptation des CGU stipulées dans le présent contrat, l'Utilisateur se doit de renoncer à l'accès des services proposés par le site.</target>
+      </trans-unit>
+      <trans-unit id="5usz22K" resname="The site is accessible free of charge in any place to any User with Internet access. All fees supported by the User to access the service (hardware, software, Internet connection, etc.) are at his expense.">
+        <source>The site is accessible free of charge in any place to any User with Internet access. All fees supported by the User to access the service (hardware, software, Internet connection, etc.) are at his expense.</source>
+        <target>Le site est accessible gratuitement en tout lieu à tout Utilisateur ayant un accès à Internet. Tous les frais supportés par l'Utilisateur pour accéder au service (matériel informatique, logiciels, connexion Internet, etc.) sont à sa charge.</target>
+      </trans-unit>
+      <trans-unit id="pLHpucQ" resname="The non-member User does not have access to the reserved services. To do so, he must register by completing the form. By agreeing to subscribe to the reserved services, the Member User agrees to provide honest and accurate information about his marital status and contact details, including his email address.">
+        <source>The non-member User does not have access to the reserved services. To do so, he must register by completing the form. By agreeing to subscribe to the reserved services, the Member User agrees to provide honest and accurate information about his marital status and contact details, including his email address.</source>
+        <target>L’Utilisateur non membre n'a pas accès aux services réservés. Pour cela, il doit s’inscrire en remplissant le formulaire. En acceptant de s’inscrire aux services réservés, l’Utilisateur membre s’engage à fournir des informations sincères et exactes concernant son état civil et ses coordonnées, notamment son adresse email.</target>
+      </trans-unit>
+      <trans-unit id="DPzWFde" resname="Any regularly registered Member User may also request to be unsubscribed by going to the dedicated page on his personal space. It will be effective within a reasonable time.">
+        <source>Any regularly registered Member User may also request to be unsubscribed by going to the dedicated page on his personal space. It will be effective within a reasonable time.</source>
+        <target>Tout Utilisateur membre régulièrement inscrit pourra également solliciter sa désinscription en se rendant à la page dédiée sur son espace personnel. Celle-ci sera effective dans un délai raisonnable.</target>
+      </trans-unit>
+      <trans-unit id="J__yaBu" resname="Any event due to force majeure resulting in a malfunction of the site or server and subject to any interruption or modification in case of maintenance, does not engage the responsibility of cook.quentin.dev. In these cases, the User thus agrees not to hold the editor accountable any interruption or suspension of service, even without notice.">
+        <source>Any event due to force majeure resulting in a malfunction of the site or server and subject to any interruption or modification in case of maintenance, does not engage the responsibility of cook.quentin.dev. In these cases, the User thus agrees not to hold the editor accountable any interruption or suspension of service, even without notice.</source>
+        <target>Tout événement de force majeure entraînant un dysfonctionnement du site ou du serveur et sujet à toute interruption ou modification en cas de maintenance, n’engage pas la responsabilité de cook.quentin.dev. Dans ces cas, l’Utilisateur s’engage donc à ne pas tenir l’éditeur responsable de toute interruption ou suspension de service, même sans préavis.</target>
+      </trans-unit>
+      <trans-unit id="s0Fz6FR" resname="The User has the possibility to contact the site by email to the email address of the editor press release on legal notices.">
+        <source>The User has the possibility to contact the site by email to the email address of the editor press release on legal notices.</source>
+        <target>L'Utilisateur a la possibilité de contacter le site par messagerie électronique à l’adresse email de l’éditeur communiqué sur les mentions légales.</target>
+      </trans-unit>
+      <trans-unit id="estzys4" resname="The site ensures to the User a collection and processing of personal information in compliance with the privacy in accordance with Law No. 78-17 of 6 January 1978 on data processing, files and freedoms and regulation no. 2016/679 (GDPR) of 25 May 2018.">
+        <source>The site ensures to the User a collection and processing of personal information in compliance with the privacy in accordance with Law No. 78-17 of 6 January 1978 on data processing, files and freedoms and regulation no. 2016/679 (GDPR) of 25 May 2018.</source>
+        <target>Le site assure à l'Utilisateur une collecte et un traitement d'informations personnelles dans le respect de la vie privée conformément à la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés ainsi que le réglement n°2016/679 (RGPD) du 25 mai 2018.</target>
+      </trans-unit>
+      <trans-unit id="TGnX.bm" resname="Under the Data Protection Act, dated January 6, 1978 and the GDPR dated May 25, 2018, the User has a right of access, rectification, deletion and opposition of personal data. The User exercises this right by e-mail to contact@quentin.dev.">
+        <source>Under the Data Protection Act, dated January 6, 1978 and the GDPR dated May 25, 2018, the User has a right of access, rectification, deletion and opposition of personal data. The User exercises this right by e-mail to contact@quentin.dev.</source>
+        <target>En vertu de la loi Informatique et Libertés, en date du 6 janvier 1978, l'Utilisateur dispose d'un droit d'accès, de rectification, de suppression et d'opposition de ses données personnelles. L'Utilisateur exerce ce droit par mail à l'adresse mail contact@quentin.dev.</target>
+      </trans-unit>
+      <trans-unit id="cBd_..1" resname="Trademarks, logos, signs and all content of the site (texts, images, sound, etc.) are subject to a protection by the Intellectual Property Code and more particularly by copyright.">
+        <source>Trademarks, logos, signs and all content of the site (texts, images, sound, etc.) are subject to a protection by the Intellectual Property Code and more particularly by copyright.</source>
+        <target>Les marques, logos, signes ainsi que tous les contenus du site (textes, images, son…) font l'objet d'une protection par le Code de la propriété intellectuelle et plus particulièrement par le droit d'auteur.</target>
+      </trans-unit>
+      <trans-unit id="x359u8x" resname="The User must request the prior authorization of the site for any reproduction, publication, copy of content. It undertakes to use the content of the site in a strictly private context, any use for commercial and advertising purposes is strictly prohibited.">
+        <source>The User must request the prior authorization of the site for any reproduction, publication, copy of content. It undertakes to use the content of the site in a strictly private context, any use for commercial and advertising purposes is strictly prohibited.</source>
+        <target>L'Utilisateur doit solliciter l'autorisation préalable du site pour toute reproduction, publication, copie des différents contenus. Il s'engage à une utilisation des contenus du site dans un cadre strictement privé, toute utilisation à des fins commerciales et publicitaires est strictement interdite.</target>
+      </trans-unit>
+      <trans-unit id="mKV29U5" resname="Any total or partial representation of this site by any means, without permission the operator of the website would constitute an infringement sanctioned by article L 335-2 and of the Intellectual Property Code.">
+        <source>Any total or partial representation of this site by any means, without permission the operator of the website would constitute an infringement sanctioned by article L 335-2 and of the Intellectual Property Code.</source>
+        <target>Toute représentation totale ou partielle de ce site par quelque moyen que ce soit, sans autorisation de l’exploitant du site constituerait une contrefaçon sanctionnée par l’article L 335-2 et du Code de la propriété intellectuelle.</target>
+      </trans-unit>
+      <trans-unit id="8w5duoz" resname="It is recalled in accordance with article L122-5 of the Intellectual Property Code that the User who reproduce, copy or publish the copyrighted content must cite the author and its source.">
+        <source>It is recalled in accordance with article L122-5 of the Intellectual Property Code that the User who reproduce, copy or publish the copyrighted content must cite the author and its source.</source>
+        <target>Il est rappelé conformément à l’article L122-5 du Code de propriété intellectuelle que l’Utilisateur qui reproduit, copie ou publie le contenu protégé doit citer l’auteur et sa source.</target>
+      </trans-unit>
+      <trans-unit id="8xZ_0B8" resname="The sources of the information on cook.quentin.dev are considered reliable but the site does not does not guarantee that it is free from defects, errors or omissions.">
+        <source>The sources of the information on cook.quentin.dev are considered reliable but the site does not does not guarantee that it is free from defects, errors or omissions.</source>
+        <target>Les sources des informations diffusées sur le site cook.quentin.dev sont réputées fiables mais le site ne garantit pas qu’il soit exempt de défauts, d’erreurs ou d’omissions.</target>
+      </trans-unit>
+      <trans-unit id="JRyW2tB" resname="The information provided is indicative and general and does not have any contractual value. Despite regular updates, the site cook quentin.dev cannot be held responsible for the modification of the administrative and legal provisions arising after publication. Similarly, the site may not be kept responsible for the use and interpretation of the information contained on this site.">
+        <source>The information provided is indicative and general and does not have any contractual value. Despite regular updates, the site cook quentin.dev cannot be held responsible for the modification of the administrative and legal provisions arising after publication. Similarly, the site may not be kept responsible for the use and interpretation of the information contained on this site.</source>
+        <target>Les informations communiquées sont présentées à titre indicatif et général sans valeur contractuelle. Malgré des mises à jour régulières, le site cook.quentin.dev ne peut être tenu responsable de la modification des dispositions administratives et juridiques survenant après la publication. De même, le site ne peut être tenue responsable de l’utilisation et de l’interprétation de l’information contenue dans ce site.</target>
+      </trans-unit>
+      <trans-unit id="W9oxak." resname="The User ensures to keep his password secret. Any disclosure of the password, whatever its form is prohibited. It assumes the risks associated with the use of its username and password. The site declines all responsibility.">
+        <source>The User ensures to keep his password secret. Any disclosure of the password, whatever its form is prohibited. It assumes the risks associated with the use of its username and password. The site declines all responsibility.</source>
+        <target>L'Utilisateur s'assure de garder son mot de passe secret. Toute divulgation du mot de passe, quelle que soit sa forme, est interdite. Il assume les risques liés à l'utilisation de son identifiant et mot de passe. Le site décline toute responsabilité.</target>
+      </trans-unit>
+      <trans-unit id="Kvi3nL8" resname="The site cook.quentin.dev cannot be held responsible for possible viruses that could infect the computer or any computer equipment of the User, following use, access, or download from this site.">
+        <source>The site cook.quentin.dev cannot be held responsible for possible viruses that could infect the computer or any computer equipment of the User, following use, access, or download from this site.</source>
+        <target>Le site cook.quentin.dev ne peut être tenu pour responsable d’éventuels virus qui pourraient infecter l’ordinateur ou tout matériel informatique de l’Internaute, suite à une utilisation, à l’accès, ou au téléchargement provenant de ce site.</target>
+      </trans-unit>
+      <trans-unit id="qCyTR9n" resname="The site cannot be held liable in case of force majeure or unforeseeable event and insurmountable by one third.">
+        <source>The site cannot be held liable in case of force majeure or unforeseeable event and insurmountable by one third.</source>
+        <target>La responsabilité du site ne peut être engagée en cas de force majeure ou du fait imprévisible et insurmontable d'un tiers.</target>
+      </trans-unit>
+      <trans-unit id="gyXIvD4" resname="Hypertext links may be present on the site. The User is informed that by clicking on these links, it will come out of the cook quentin.dev site. The latter has no control over the web pages on which end up these links and cannot, under any circumstances, be responsible for their content.">
+        <source>Hypertext links may be present on the site. The User is informed that by clicking on these links, it will come out of the cook quentin.dev site. The latter has no control over the web pages on which end up these links and cannot, under any circumstances, be responsible for their content.</source>
+        <target>Des liens hypertextes peuvent être présents sur le site. L’Utilisateur est informé qu’en cliquant sur ces liens, il sortira du site cook.quentin.dev. Ce dernier n’a pas de contrôle sur les pages web sur lesquelles aboutissent ces liens et ne saurait, en aucun cas, être responsable de leur contenu.</target>
+      </trans-unit>
+      <trans-unit id="S5prOPz" resname="The User is informed that during his visits to the site, a cookie can be set automatically on its navigation software.">
+        <source>The User is informed that during his visits to the site, a cookie can be set automatically on its navigation software.</source>
+        <target>L’Utilisateur est informé que lors de ses visites sur le site, un cookie peut être paramétré automatiquement sur son logiciel de navigation.</target>
+      </trans-unit>
+      <trans-unit id="aeEvqyQ" resname="Cookies are small files temporarily stored on the hard drive of the User’s computer by your browser and are necessary for the use of the site cook.quentin.dev. Cookies do not contain no personal information and cannot be used to identify someone. A cookie contains a unique identifier, generated randomly and thus anonymous. Some cookies expire at the end of the User’s visit, others remain.">
+        <source>Cookies are small files temporarily stored on the hard drive of the User’s computer by your browser and are necessary for the use of the site cook.quentin.dev. Cookies do not contain no personal information and cannot be used to identify someone. A cookie contains a unique identifier, generated randomly and thus anonymous. Some cookies expire at the end of the User’s visit, others remain.</source>
+        <target>Les cookies sont de petits fichiers temporairement stockés sur le disque dur de l’ordinateur de l’Utilisateur par votre navigateur et sont nécessaires à l’utilisation du site cook.quentin.dev. Les cookies ne contiennent aucune information personnelle et ne peuvent pas être utilisés pour identifier quelqu’un. Un cookie contient un identifiant unique, généré aléatoirement et donc anonyme. Certains cookies expirent à la fin de la visite de l’Utilisateur, d’autres restent.</target>
+      </trans-unit>
+      <trans-unit id="cJKZ8x9" resname="Failing acceptance, the User is informed that certain features or pages may be refused.">
+        <source>Failing acceptance, the User is informed that certain features or pages may be refused.</source>
+        <target>A défaut d’acceptation, l’Utilisateur est informé que certaines fonctionnalités ou pages peuvent être refusées.</target>
+      </trans-unit>
+      <trans-unit id="5AXZWzy" resname="The User may disable these cookies via the settings within his navigation software.">
+        <source>The User may disable these cookies via the settings within his navigation software.</source>
+        <target>L’Utilisateur pourra désactiver ces cookies par l’intermédiaire des paramètres figurant au sein de son logiciel de navigation.</target>
+      </trans-unit>
+      <trans-unit id="nItR3pQ" resname="The French legislation applies to this contract. In the event of no amicable resolution of a dispute arising between the parties, the French courts shall have sole jurisdiction to determine the case.">
+        <source>The French legislation applies to this contract. In the event of no amicable resolution of a dispute arising between the parties, the French courts shall have sole jurisdiction to determine the case.</source>
+        <target>La législation française s'applique au présent contrat. En cas d'absence de résolution amiable d'un litige né entre les parties, les tribunaux français seront seuls compétents pour en connaître.</target>
       </trans-unit>
     </body>
   </file>
