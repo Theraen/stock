@@ -32,6 +32,34 @@
                 <div class="row">
                     <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
                     <div class="col-lg-7">
+                        <nav class="navbar navbar-expand navbar-light topbar static-top">
+
+                            <!-- Sidebar Toggle (Topbar) -->
+                            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                                <i class="fa fa-bars"></i>
+                            </button>
+
+                            <!-- Topbar Navbar -->
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item dropdown no-arrow mx-1">
+                                    <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-globe"></i>
+                                    </a>
+                                    <!-- Dropdown - Messages -->
+                                    <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                        aria-labelledby="messagesDropdown">
+                                        <h6 class="dropdown-header">
+                                            {% trans %}Languages{% endtrans %}
+                                        </h6>
+                                        {% for locale in locales %}
+                                            <a class="dropdown-item d-flex align-items-center {% if locale == app.request.locale %}active {% endif %}" href="{{path('user-change-locale', {'locale': locale}) }}">
+                                                <img class="text-center" src="{{ asset('img/languages/' ~ locale ~ '.png') }}" alt="{{ locale }}" />
+                                            </a>
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">{% trans %}Create an account{% endtrans %}</h1>
