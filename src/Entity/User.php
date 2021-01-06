@@ -97,6 +97,11 @@ class User implements UserInterface
      */
     private $pictureStocks;
 
+    /**
+     * @ORM\OneToMany(targetEntity=CategoryRecipe::class, mappedBy="user")
+     */
+    private $categoryRecipes;
+
 
     public function __construct()
     {
@@ -104,6 +109,7 @@ class User implements UserInterface
         $this->logs = new ArrayCollection();
         $this->categories = new ArrayCollection();
         $this->pictureStocks = new ArrayCollection();
+        $this->categoryRecipes = new ArrayCollection();
 
     }
 
@@ -344,6 +350,36 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($pictureStock->getUser() === $this) {
                 $pictureStock->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CategoryRecipe[]
+     */
+    public function getCategoryRecipes(): Collection
+    {
+        return $this->categoryRecipes;
+    }
+
+    public function addCategoryRecipe(CategoryRecipe $categoryRecipe): self
+    {
+        if (!$this->categoryRecipes->contains($categoryRecipe)) {
+            $this->categoryRecipes[] = $categoryRecipe;
+            $categoryRecipe->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategoryRecipe(CategoryRecipe $categoryRecipe): self
+    {
+        if ($this->categoryRecipes->removeElement($categoryRecipe)) {
+            // set the owning side to null (unless already changed)
+            if ($categoryRecipe->getUser() === $this) {
+                $categoryRecipe->setUser(null);
             }
         }
 

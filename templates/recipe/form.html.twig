@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Add a recipe{% endtrans %}{% endblock %}
+
+{% block body %}
+
+    <div class="card mb-4 py-3 border-left-info">
+        <div class="card-body">
+            <h1 class="d-inline-block">{% trans %}Add a recipe{% endtrans %}</h1>            
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-lg-6 col-md-8">
+            {{ form_start(form) }}
+                {{ form_row(form.nb_person) }}
+                {{ form_row(form.preparation_time) }}
+                {{ form_row(form.cooking_time) }}
+                {{ form_row(form.picture) }}
+                {{ form_row(form.categoryRecipes) }}
+                <div class="form-group">
+                    <label for="recipe_ingredients" class="required">{% trans %}Ingredients{% endtrans %} </label>
+                    <ul class="ingredients" data-prototype="{{ form_widget(form.ingredients.vars.prototype)|e('html_attr') }}">
+                        {% for ingredient in form.ingredients %}
+                            <li>{{ form_row(ingredient) }}</li>
+                        {% endfor %}
+                    </ul>
+                   <div class="mb-3">
+                        <button type="button" class="add_item_link_ingredient btn btn-success btn-circle" data-collection-holder-class="ingredients"><i class="fas fa-plus"></i></button>
+                   </div>
+                </div>
+                <div class="form-group">
+                    <label for="recipe_preparation" class="required">{% trans %}Preparation{% endtrans %} </label>
+                    <ul class="preparation" data-prototype="{{ form_widget(form.preparation.vars.prototype)|e('html_attr') }}">
+                        {% for preparation in form.preparation %}
+                            <li>{{ form_row(preparation) }}</li>
+                        {% endfor %}
+                    </ul>
+                   <div class="mb-3">
+                        <button type="button" class="add_item_link_preparation btn btn-success btn-circle" data-collection-holder-class="preparation"><i class="fas fa-plus"></i></button>
+                   </div>
+                </div>
+                
+                
+                    <button class="btn btn-block btn-success" type="submit">{% trans %}Save{% endtrans %}</button>
+                
+            {{ form_end(form) }}
+        </div>
+        
+    </div>
+    
+
+{% endblock %}
+
+
+
+    {% block javascripts %}
+        <script src="{{ asset('js/custom.js') }}"></script>
+    {% endblock %}
