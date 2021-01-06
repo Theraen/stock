@@ -65,7 +65,7 @@ class StockController extends AbstractController
     {
 
         $categoriesProduct = $this->categoryRepository->findByUser($user);
-        $pictureProduct = $this->productRepository->findUser($user);
+        $pictureProduct = $this->productRepository->findByUser($user);
 
         if(empty($categoriesProduct)) {
 

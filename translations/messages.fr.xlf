@@ -587,6 +587,78 @@
         <source>The French legislation applies to this contract. In the event of no amicable resolution of a dispute arising between the parties, the French courts shall have sole jurisdiction to determine the case.</source>
         <target>La législation française s'applique au présent contrat. En cas d'absence de résolution amiable d'un litige né entre les parties, les tribunaux français seront seuls compétents pour en connaître.</target>
       </trans-unit>
+      <trans-unit id="DZSNiOc" resname="To be able to insert a recipe you must first set the categories. Settings =&gt; Recipe categories">
+        <source>To be able to insert a recipe you must first set the categories. Settings =&gt; Recipe categories</source>
+        <target>Pour pouvoir insérer une recette, vous devez d’abord définir les catégories. Paramètres =&gt; Catégories de recettes</target>
+      </trans-unit>
+      <trans-unit id="cRiOHwJ" resname="The recipe has been deleted">
+        <source>The recipe has been deleted</source>
+        <target>La recette a été supprimée</target>
+      </trans-unit>
+      <trans-unit id="pGE58NR" resname="To be able to insert a product you must first set the categories. Settings =&gt; Product categories">
+        <source>To be able to insert a product you must first set the categories. Settings =&gt; Product categories</source>
+        <target>Pour pouvoir insérer un produit, vous devez d’abord définir les catégories. Paramètres => Catégories de produits</target>
+      </trans-unit>
+      <trans-unit id="UV6ZVTw" resname="To be able to insert a product you must first set the pictures. Settings =&gt; Product picture">
+        <source>To be able to insert a product you must first set the pictures. Settings =&gt; Product picture</source>
+        <target>Pour pouvoir insérer un produit, vous devez d’abord définir les images. Paramètres => Images de produits</target>
+      </trans-unit>
+      <trans-unit id="9Ni8xBh" resname="Ingredient name">
+        <source>Ingredient name</source>
+        <target>Nom de l'ingrédient</target>
+      </trans-unit>
+      <trans-unit id="Wb5xMzy" resname="Optional">
+        <source>Optional</source>
+        <target>Facultatif</target>
+      </trans-unit>
+      <trans-unit id="t3ICnRC" resname="Number of person">
+        <source>Number of person</source>
+        <target>Nombre de personne</target>
+      </trans-unit>
+      <trans-unit id="lrP2768" resname="Preparation time">
+        <source>Preparation time</source>
+        <target>Temps de préparation</target>
+      </trans-unit>
+      <trans-unit id="bWMpVBK" resname="Cooking time">
+        <source>Cooking time</source>
+        <target>Temps de cuisson</target>
+      </trans-unit>
+      <trans-unit id="VY0Ew3i" resname="Add a recipe">
+        <source>Add a recipe</source>
+        <target>Ajouter une recette</target>
+      </trans-unit>
+      <trans-unit id="UgB_R9L" resname="Edit a recipe">
+        <source>Edit a recipe</source>
+        <target>Modifier une recette</target>
+      </trans-unit>
+      <trans-unit id="h2dduDo" resname="Ingredients">
+        <source>Ingredients</source>
+        <target>Ingrédients</target>
+      </trans-unit>
+      <trans-unit id="zyvvsPG" resname="Preparation">
+        <source>Preparation</source>
+        <target>Préparation</target>
+      </trans-unit>
+      <trans-unit id="IeSesrK" resname="Log">
+        <source>Log</source>
+        <target>Log</target>
+      </trans-unit>
+      <trans-unit id="qdVi1rS" resname="Activity log">
+        <source>Activity log</source>
+        <target>Journal de log</target>
+      </trans-unit>
+      <trans-unit id="uq3fcPt" resname="Type">
+        <source>Type</source>
+        <target>Type</target>
+      </trans-unit>
+      <trans-unit id="mcQKtAW" resname="Date">
+        <source>Date</source>
+        <target>Date</target>
+      </trans-unit>
+      <trans-unit id="e5yftaO" resname="Edit a product">
+        <source>Edit a product</source>
+        <target>Modifier un produit</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

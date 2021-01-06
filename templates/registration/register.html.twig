@@ -65,6 +65,14 @@
                                 <h1 class="h4 text-gray-900 mb-4">{% trans %}Create an account{% endtrans %}</h1>
                             </div>
 
+                            {% for label, messages in app.flashes %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{ label }}">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+
                             {{ form_start(registrationForm, {'attr': {'class': 'user'}} ) }}
                                 {{ form_row(registrationForm.email) }}
                                 {{ form_row(registrationForm.firstname) }}

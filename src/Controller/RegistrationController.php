@@ -28,6 +28,12 @@ class RegistrationController extends AbstractController
         $this->translator = $translator;
     }
 
+    public function verifEmail($email) {
+        list($username, $domain) = explode('@', $email, 2);
+
+        return checkdnsrr($domain, 'MX');
+    }
+
     /**
      * @Route("/register", name="app_register")
      */
@@ -38,6 +44,17 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            //dd($this->verifEmail($user->getEmail()));
+
+            if(!$this->verifEmail($user->getEmail())) {
+
+                $messageEmailDomain = $this->translator->trans('The email address domain does not exist. Please enter a valid email address.');
+
+                $this->addFlash("danger", $messageEmailDomain);
+
+                return $this->redirectToRoute('app_register');
+            }
             // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(
