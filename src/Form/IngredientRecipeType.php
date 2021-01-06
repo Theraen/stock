@@ -43,6 +43,7 @@ class IngredientRecipeType extends AbstractType
             ])
             ->add('optional', CheckboxType::class, [
                 'label' => $this->translator->trans('Optional'),
+                'required' => false,
             ])
         ;
     }

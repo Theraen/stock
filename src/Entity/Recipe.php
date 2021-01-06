@@ -40,14 +40,9 @@ class Recipe
     private $note;
 
     /**
-     * @ORM\OneToMany(targetEntity=IngredientRecipe::class, mappedBy="recipe", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=IngredientRecipe::class, mappedBy="recipe", orphanRemoval=true, cascade={"persist","remove"})
      */
     private $ingredients;
-
-    /**
-     * @ORM\OneToMany(targetEntity=PreparationRecipe::class, mappedBy="recipe", orphanRemoval=true)
-     */
-    private $preparation;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -55,15 +50,41 @@ class Recipe
     private $picture;
 
     /**
-     * @ORM\ManyToMany(targetEntity=CategoryRecipe::class, mappedBy="recipes")
+     * @ORM\ManyToMany(targetEntity=CategoryRecipe::class, inversedBy="recipes", cascade={"persist", "remove"})
      */
     private $categoryRecipes;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updated_at;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="recipes")
+     */
+    private $user;
+
+    /**
+     * @ORM\OneToMany(targetEntity=PreparationRecipe::class, mappedBy="recipe", orphanRemoval=true, cascade={"persist", "remove"})
+     */
+    private $preparations;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
 
     public function __construct()
     {
         $this->ingredients = new ArrayCollection();
         $this->preparation = new ArrayCollection();
         $this->categoryRecipes = new ArrayCollection();
+        $this->preparations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -149,35 +170,6 @@ class Recipe
         return $this;
     }
 
-    /**
-     * @return Collection|PreparationRecipe[]
-     */
-    public function getPreparation(): Collection
-    {
-        return $this->preparation;
-    }
-
-    public function addPreparation(PreparationRecipe $preparation): self
-    {
-        if (!$this->preparation->contains($preparation)) {
-            $this->preparation[] = $preparation;
-            $preparation->setRecipe($this);
-        }
-
-        return $this;
-    }
-
-    public function removePreparation(PreparationRecipe $preparation): self
-    {
-        if ($this->preparation->removeElement($preparation)) {
-            // set the owning side to null (unless already changed)
-            if ($preparation->getRecipe() === $this) {
-                $preparation->setRecipe(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function getPicture(): ?string
     {
@@ -214,6 +206,84 @@ class Recipe
         if ($this->categoryRecipes->removeElement($categoryRecipe)) {
             $categoryRecipe->removeRecipe($this);
         }
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|PreparationRecipe[]
+     */
+    public function getPreparations(): Collection
+    {
+        return $this->preparations;
+    }
+
+    public function addPreparation(PreparationRecipe $preparation): self
+    {
+        if (!$this->preparations->contains($preparation)) {
+            $this->preparations[] = $preparation;
+            $preparation->setRecipe($this);
+        }
+
+        return $this;
+    }
+
+    public function removePreparation(PreparationRecipe $preparation): self
+    {
+        if ($this->preparations->removeElement($preparation)) {
+            // set the owning side to null (unless already changed)
+            if ($preparation->getRecipe() === $this) {
+                $preparation->setRecipe(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }

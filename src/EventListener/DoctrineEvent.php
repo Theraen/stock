@@ -37,8 +37,6 @@ class DoctrineEvent implements EventSubscriber {
 
 
 
-        
-
         if($entity instanceof Product) {
             $log->setUser($this->user);
             $log->setName('Un nouveau produit a été ajouté');
@@ -68,10 +66,6 @@ class DoctrineEvent implements EventSubscriber {
         $log->setType('delete');
         $log->setCreatedAt(new DateTime());
         
-
-
-        
-
         if($entity instanceof Product) {
             
             $log->setUser($this->user);

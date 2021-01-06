@@ -6,7 +6,7 @@
 
     <div class="card mb-4 py-3 border-left-info">
         <div class="card-body">
-            <h1 class="d-inline-block">{% trans %}Add a product{% endtrans %}</h1>            
+            <h1 class="d-inline-block">{% if route == 'stock_add' %}{% trans %}Add a product{% endtrans %}{% else %}{% trans %}Edit a product{% endtrans %}{% endif %}</h1>            
         </div>
     </div>
 

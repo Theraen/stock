@@ -6,6 +6,8 @@ use App\Data\SearchProduct;
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Form\SearchProductType;
+use App\Repository\CategoryRepository;
+use App\Repository\PictureStockRepository;
 use App\Repository\ProductRepository;
 use App\Service\Mailer;
 use DateTime;
@@ -23,12 +25,16 @@ class StockController extends AbstractController
     private $em;
     private $productRepository;
     private $translator;
+    private $categoryRepository;
+    private $pictureStockRepository;
 
-    public function __construct(EntityManagerInterface $em, ProductRepository $productRepository, TranslatorInterface $translator)
+    public function __construct(EntityManagerInterface $em, PictureStockRepository $pictureStockRepository, CategoryRepository $categoryRepository, ProductRepository $productRepository, TranslatorInterface $translator)
     {
         $this->em = $em;
         $this->productRepository = $productRepository;
         $this->translator = $translator;
+        $this->categoryRepository = $categoryRepository;
+        $this->pictureStockRepository = $pictureStockRepository;
     }
     /**
      * @Route("/supply", name="stock")
@@ -57,9 +63,33 @@ class StockController extends AbstractController
      */
     public function add(Request $request, UserInterface $user): Response
     {
+
+        $categoriesProduct = $this->categoryRepository->findByUser($user);
+        $pictureProduct = $this->productRepository->findUser($user);
+
+        if(empty($categoriesProduct)) {
+
+        $messageEmptyCategoriesProduct = $this->translator->trans('To be able to insert a product you must first set the categories. Settings => Product categories');
+
+            $this->addFlash("warning", $messageEmptyCategoriesProduct);
+        
+            return $this->redirectToRoute('stock');
+        }
+
+        if(empty($pictureProduct)) {
+
+            $messageEmptyPictureProduct = $this->translator->trans('To be able to insert a product you must first set the pictures. Settings => Product picture');
+    
+                $this->addFlash("warning", $messageEmptyPictureProduct);
+            
+                return $this->redirectToRoute('stock');
+            }
+
         $product = new Product;
 
-        $form = $this->createForm(ProductType::class, $product);
+        $form = $this->createForm(ProductType::class, $product, [
+            'user' => $user
+        ]);
 
         $form->handleRequest($request);
 

@@ -24,7 +24,7 @@ class PictureStockRepository extends ServiceEntityRepository
     }
 
         /**
-     * @return PictureStock[] Returns an array of Product objects
+     * @return PictureStock[] Returns an array of PictureStock objects
      */
     
     public function findSearch($search, $user)
@@ -45,5 +45,19 @@ class PictureStockRepository extends ServiceEntityRepository
                 $search->page,
                 12
             );
+    }
+
+    /**
+     * @return PictureStock[] Returns an array of PictureStock objects
+     */
+    
+    public function findByUser($user)
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.user = :u')
+            ->setParameter('u', $user)
+            ->getQuery()
+            ->getResult();
+
     }
 }

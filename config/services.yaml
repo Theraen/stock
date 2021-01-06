@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     pictureProduct_directory: '%kernel.project_dir%/public/uploads/picture/product'
+    pictureRecipe_directory: '%kernel.project_dir%/public/uploads/picture/recipe'
     maintenanceFilePath: '%kernel.project_dir%/public/.maintenance'
     app.locales: [en, fr]
 

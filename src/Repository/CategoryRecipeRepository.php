@@ -19,22 +19,19 @@ class CategoryRecipeRepository extends ServiceEntityRepository
         parent::__construct($registry, CategoryRecipe::class);
     }
 
-    // /**
-    //  * @return CategoryRecipe[] Returns an array of CategoryRecipe objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return CategoryRecipe[] Returns an array of CategoryRecipe objects
+     */
+    
+    public function findByUser($user)
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('c.user = :u')
+            ->setParameter('u', $user)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
+
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?CategoryRecipe

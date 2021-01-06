@@ -23,20 +23,11 @@ class PreparationRecipe
     private $title;
 
     /**
-     * @ORM\Column(type="datetime")
-     */
-    private $create_at;
-
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $updated_at;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Recipe::class, inversedBy="preparation")
+     * @ORM\ManyToOne(targetEntity=Recipe::class, inversedBy="preparations")
      * @ORM\JoinColumn(nullable=false)
      */
     private $recipe;
+
 
     public function getId(): ?int
     {
@@ -51,30 +42,6 @@ class PreparationRecipe
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
-        return $this;
-    }
-
-    public function getCreateAt(): ?\DateTimeInterface
-    {
-        return $this->create_at;
-    }
-
-    public function setCreateAt(\DateTimeInterface $create_at): self
-    {
-        $this->create_at = $create_at;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeInterface
-    {
-        return $this->updated_at;
-    }
-
-    public function setUpdatedAt(?\DateTimeInterface $updated_at): self
-    {
-        $this->updated_at = $updated_at;
 
         return $this;
     }

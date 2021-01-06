@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Category;
 use App\Entity\PictureStock;
 use App\Entity\Product;
+use App\Repository\CategoryRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -26,6 +27,7 @@ class ProductType extends AbstractType
     
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $user = $options['user'];
         $builder
             ->add('name', TextType::class, [
                 'required' => true,
@@ -69,6 +71,11 @@ class ProductType extends AbstractType
                 'attr' => [
                     'class' => 'selectpicker show-tick', 
                 ],
+                'query_builder' => function(CategoryRepository $er) use ($user) {
+                    return $er->createQueryBuilder('c')
+                    ->andWhere('c.user = :u')
+                    ->setParameter('u', $user);
+                }
             ])
             ->add('pictureStock', EntityType::class, [
                 'label' => $this->translator->trans('Picture'),
@@ -87,5 +94,6 @@ class ProductType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Product::class,
         ]);
+        $resolver->setRequired(['user']);
     }
 }
