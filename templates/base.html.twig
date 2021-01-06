@@ -48,7 +48,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <li class="nav-item">
+            <li class="nav-item {% if route == "recipe_list" or route == "recipe_add" or route == "recipe_update" %}active{% endif %}">
                 <a class="nav-link" href="{{ path('recipe_list') }}">
                     <i class="fas fa-fw fa-blender"></i>
                     <span>{% trans %}Recipes{% endtrans %}</span></a>
@@ -62,12 +62,14 @@
                         <i class="fas fa-fw fa-cog"></i>
                         <span>{% trans %}Settings{% endtrans %}</span>
                     </a>
-                    <div id="parameters" class="collapse {% if route == "picture_product" or route == "picture_product_add" or route == "category_product" or route == "category_product_add" %}show{% endif %}"
+                    <div id="parameters" class="collapse {% if route == "picture_product" or route == "picture_product_add" or route == "category_product" or route == "category_product_add" or route == "category_recipe" or route == "category_recipe_add" or route == "category_recipe_update" %}show{% endif %}"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">{% trans %}Product settings {% endtrans %} :</h6>
                             <a class="collapse-item {% if route == "picture_product" or route == "picture_product_add" %}active{% endif %}" href="{{ path('picture_product') }}">{% trans %}Product picture{% endtrans %}</a>
-                            <a class="collapse-item {% if route == "category_product" or route == "category_product_add" %}active{% endif %}" href="{{ path('category_product') }}">{% trans %}Product categories{% endtrans %}</a>
+                            <a class="collapse-item {% if route == "category_product" or route == "category_product_add" or route == "category_product_update" %}active{% endif %}" href="{{ path('category_product') }}">{% trans %}Product categories{% endtrans %}</a>
+                            <h6 class="collapse-header">{% trans %}Recipe settings {% endtrans %} :</h6>
+                            <a class="collapse-item {% if route == "category_recipe" or route == "category_recipe_add" or route == "category_recipe_update" %}active{% endif %}" href="{{ path('category_recipe') }}">{% trans %}Recipe categories{% endtrans %}</a>
                             
                         </div>
                     </div>

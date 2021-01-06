@@ -78,6 +78,8 @@ class RegistrationController extends AbstractController
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
             // do anything else you need here, like send an email
+            $messageVerifyEmail = $this->translator->trans('Please validate your email address by clicking on the link in the confirmation email. This link expires in 1 hour. The site will no longer be accessible to your next connection without this validation.');
+            $this->addFlash('warning', $messageVerifyEmail);
 
             return $guardHandler->authenticateUserAndHandleSuccess(
                 $user,
@@ -105,9 +107,9 @@ class RegistrationController extends AbstractController
         try {
             $this->emailVerifier->handleEmailConfirmation($request, $this->getUser());
         } catch (VerifyEmailExceptionInterface $exception) {
-            $this->addFlash('verify_email_error', $exception->getReason());
+            //$this->addFlash('verify_email_error', $exception->getReason());
 
-            return $this->redirectToRoute('app_register');
+            return $this->redirectToRoute('app_login');
         }
 
         // @TODO Change the redirect on success and handle or remove the flash message in your templates

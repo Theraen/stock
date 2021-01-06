@@ -51,7 +51,7 @@ class RecipeRepository extends ServiceEntityRepository
             return $this->paginator->paginate(
                 $query,
                 $search->page,
-                1
+                12
             );
     }
 }

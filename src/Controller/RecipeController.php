@@ -86,9 +86,51 @@ class RecipeController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()) {
 
-            
             $file = $form->get('picture')->getData();
+            $error = 0;
+            $messageEmptyCategoriesRecipe = $this->translator->trans('You must associate the recipe has at least one category.');
+            $messageEmptyNbPerson = $this->translator->trans('You must fill in the number of person.');
+            $messageEmptyPreparationTime = $this->translator->trans('You must enter the preparation time. If there is no preparation time, enter the value 0.');
+            $messageEmptyCookingTime = $this->translator->trans('You must enter the cooking time. If there is none, enter the value 0.');
+            $messageEmptyPicture = $this->translator->trans('You must fill in an picture');
+            $messageEmptyIngredient = $this->translator->trans('You must combine at least one ingredient.');
+            $messageEmptyPreparation = $this->translator->trans('You must associate at least one preparation step.');
             
+           
+
+            if($recipe->getCategoryRecipes()->isEmpty()) {
+                $error++;
+                $this->addFlash("danger", $messageEmptyCategoriesRecipe);
+            }
+            if(empty($recipe->getNbPerson())) {
+                $error++;
+                $this->addFlash("danger", $messageEmptyNbPerson);
+            }
+            if(empty($recipe->getPreparationTime())) {
+                $error++;
+                $this->addFlash("danger", $messageEmptyPreparationTime);
+            }
+            if(empty($recipe->getCookingTime())) {
+                $error++;
+                $this->addFlash("danger", $messageEmptyCookingTime);
+            }
+            if(!$file) {
+                $error++;
+                $this->addFlash("danger", $messageEmptyPicture);
+            }
+            if($recipe->getIngredients()->isEmpty()) {
+                $error++;
+                $this->addFlash("danger", $messageEmptyIngredient);
+            }
+            if($recipe->getPreparations()->isEmpty()) {
+                $error++;
+                $this->addFlash("danger", $messageEmptyPreparation);
+            }
+
+            if($error != 0) {
+                return $this->redirectToRoute('recipe_add');
+            }
+
             if($file) {
                 $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
 
@@ -142,6 +184,7 @@ class RecipeController extends AbstractController
      */
     public function update(Request $request, Recipe $recipe, UserInterface $user): Response
     {
+
         $picture = $recipe->getPicture();
 
         $projectDir = $this->appKernel->getProjectDir();
@@ -152,12 +195,52 @@ class RecipeController extends AbstractController
 
         $form->handleRequest($request);
 
-        dump($form);
+
 
         if($form->isSubmitted() && $form->isValid()) {
+
+            $error = 0;
+            $messageEmptyCategoriesRecipe = $this->translator->trans('You must associate the recipe has at least one category.');
+            $messageEmptyNbPerson = $this->translator->trans('You must fill in the number of person.');
+            $messageEmptyPreparationTime = $this->translator->trans('You must enter the preparation time. If there is no preparation time, enter the value 0.');
+            $messageEmptyCookingTime = $this->translator->trans('You must enter the cooking time. If there is none, enter the value 0.');
+            $messageEmptyIngredient = $this->translator->trans('You must combine at least one ingredient.');
+            $messageEmptyPreparation = $this->translator->trans('You must associate at least one preparation step.');
+            
+           
+
+            if($recipe->getCategoryRecipes()->isEmpty()) {
+                $error++;
+                $this->addFlash("danger", $messageEmptyCategoriesRecipe);
+            }
+            if(empty($recipe->getNbPerson())) {
+                $error++;
+                $this->addFlash("danger", $messageEmptyNbPerson);
+            }
+            if(empty($recipe->getPreparationTime())) {
+                $error++;
+                $this->addFlash("danger", $messageEmptyPreparationTime);
+            }
+            if(empty($recipe->getCookingTime())) {
+                $error++;
+                $this->addFlash("danger", $messageEmptyCookingTime);
+            }
+            if($recipe->getIngredients()->isEmpty()) {
+                $error++;
+                $this->addFlash("danger", $messageEmptyIngredient);
+            }
+            if($recipe->getPreparations()->isEmpty()) {
+                $error++;
+                $this->addFlash("danger", $messageEmptyPreparation);
+            }
+
+            if($error != 0) {
+                return $this->redirectToRoute('recipe_update', [
+                    'id' => $recipe->getId(),
+                ]);
+            }
             
             $recipe->setUpdatedAt(new DateTime());
-            dump($form);
 
 
             $file = $form->get('picture')->getData();
@@ -213,7 +296,7 @@ class RecipeController extends AbstractController
         ]);
     }
 
-       /**
+    /**
      * @Route("/recipes/delete/{id}", name="recipe_delete")
      */
     public function delete(Request $request, Recipe $recipe): Response
@@ -229,5 +312,17 @@ class RecipeController extends AbstractController
 
         return $this->redirectToRoute('recipe_list');
 
+    }
+
+    /**
+     * @Route("/recipes/detail/{id}", name="recipe_detail")
+     */
+    public function viewDetail(Request $request, Recipe $recipeEntity): Response
+    {
+        $recipe = $this->recipeRepository->find($recipeEntity);
+
+        return $this->render('recipe/detail.html.twig', [
+            'recipe' => $recipe
+        ]);
     }
 }

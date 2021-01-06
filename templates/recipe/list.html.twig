@@ -33,7 +33,7 @@
             <div class="row">
                 {% for recipe in recipes %}
                     <div class="col-xl-3 col-md-6 mb-4">
-                        <a href="#">
+                        <a href="{{ path('recipe_detail', {id: recipe.id}) }}">
                             <div class="card">
                                 <img src="{{ asset('uploads/picture/recipe/' ~ recipe.picture) }}" alt="" width="100%">
                                 <div class="card-body">
@@ -48,10 +48,12 @@
                 {% endfor %}
                 
             </div>
-
+            
             <div class="float-right">
                 {{ knp_pagination_render(recipes) }}
             </div>
+            
+            
             
             
         </div>

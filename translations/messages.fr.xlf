@@ -589,7 +589,7 @@
       </trans-unit>
       <trans-unit id="DZSNiOc" resname="To be able to insert a recipe you must first set the categories. Settings =&gt; Recipe categories">
         <source>To be able to insert a recipe you must first set the categories. Settings =&gt; Recipe categories</source>
-        <target>Pour pouvoir insérer une recette, vous devez d’abord définir les catégories. Paramètres =&gt; Catégories de recettes</target>
+        <target><![CDATA[Pour pouvoir insérer une recette, vous devez d’abord définir les catégories. Paramètres => Catégories de recettes]]></target>
       </trans-unit>
       <trans-unit id="cRiOHwJ" resname="The recipe has been deleted">
         <source>The recipe has been deleted</source>
@@ -597,11 +597,11 @@
       </trans-unit>
       <trans-unit id="pGE58NR" resname="To be able to insert a product you must first set the categories. Settings =&gt; Product categories">
         <source>To be able to insert a product you must first set the categories. Settings =&gt; Product categories</source>
-        <target>Pour pouvoir insérer un produit, vous devez d’abord définir les catégories. Paramètres => Catégories de produits</target>
+        <target><![CDATA[Pour pouvoir insérer un produit, vous devez d’abord définir les catégories. Paramètres => Catégories de produits]]></target>
       </trans-unit>
       <trans-unit id="UV6ZVTw" resname="To be able to insert a product you must first set the pictures. Settings =&gt; Product picture">
         <source>To be able to insert a product you must first set the pictures. Settings =&gt; Product picture</source>
-        <target>Pour pouvoir insérer un produit, vous devez d’abord définir les images. Paramètres => Images de produits</target>
+        <target><![CDATA[Pour pouvoir insérer un produit, vous devez d’abord définir les images. Paramètres => Images de produits]]></target>
       </trans-unit>
       <trans-unit id="9Ni8xBh" resname="Ingredient name">
         <source>Ingredient name</source>
@@ -658,6 +658,18 @@
       <trans-unit id="e5yftaO" resname="Edit a product">
         <source>Edit a product</source>
         <target>Modifier un produit</target>
+      </trans-unit>
+      <trans-unit id="x8d4H4H" resname="The email address domain does not exist. Please enter a valid email address.">
+        <source>The email address domain does not exist. Please enter a valid email address.</source>
+        <target>Le domaine de l'adresse email n’existe pas. Veuillez entrer une adresse email valide.</target>
+      </trans-unit>
+      <trans-unit id="3YlkB5o" resname="Please validate your email address by clicking on the link in the confirmation email. This link expires in 1 hour. The site will no longer be accessible to your next connection without this validation.">
+        <source>Please validate your email address by clicking on the link in the confirmation email. This link expires in 1 hour. The site will no longer be accessible to your next connection without this validation.</source>
+        <target>Veuillez valider votre adresse email en cliquant sur le lien dans l’email de confirmation. Ce lien expire dans 1 heure. Le site ne sera plus accessible à votre prochaine connexion sans cette validation.</target>
+      </trans-unit>
+      <trans-unit id="HKkF__t" resname="Your email address is not validated. Please click on the link in the confirmation email.">
+        <source>Your email address is not validated. Please click on the link in the confirmation email.</source>
+        <target>Votre adresse email n’est pas validée. Veuillez cliquer sur le lien dans l’email de confirmation.</target>
       </trans-unit>
     </body>
   </file>

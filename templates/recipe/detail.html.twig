@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Recipes{% endtrans %}{% endblock %}
+
+{% block body %}
+
+    <div class="card mb-4 py-3 border-left-info">
+        <div class="card-body">
+            <h1 class="d-inline-block">{{ recipe.name }}</h1>           
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="row">
+
+                <div class="card">
+                    <img src="{{ asset('uploads/picture/recipe/' ~ recipe.picture) }}" alt="" width="100%">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recipe.name}}</h5>
+                        <a href="{{ path('recipe_update', {id: recipe.id}) }}" class="btn btn-warning float-right"><i class="fas fa-edit"></i></a>
+                        <a href="{{ path('recipe_delete', {id: recipe.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+            
+
+            
+            
+            
+        </div>
+    
+    </div>
+    
+
+{% endblock %}

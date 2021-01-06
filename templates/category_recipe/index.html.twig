@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% trans %}Product categories{% endtrans %} {% endblock %}
+{% block title %}{% trans %}Recipe categories{% endtrans %} {% endblock %}
 
 {% block body %}
 
     <div class="card mb-4 py-3 border-left-info">
         <div class="card-body">
-            <h1 class="d-inline-block">{% trans %}Products categories{% endtrans %}</h1>
-                <a href="{{ path('category_product_add') }}" class="btn btn-success btn-icon-split float-right">
+            <h1 class="d-inline-block">{% trans %}Recipes categories{% endtrans %}</h1>
+                <a href="{{ path('category_recipe_add') }}" class="btn btn-success btn-icon-split float-right">
                     <span class="icon text-white-50">
                         <i class="fas fa-plus"></i>
                     </span>
@@ -18,7 +18,6 @@
     </div>
 
     <div class="card shadow mb-4">
-
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="tableLog" width="100%" cellspacing="0">
@@ -45,8 +44,8 @@
                             <td>{{ category.name }}</td>
                             <td>{{ category.createdAt|date('d/m/Y H:i:s') }}</td>
                             <td>
-                                <a href="{{ path('category_product_update', {id: category.id}) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                <a href="{{ path('category_product_delete', {id: category.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                <a href="{{ path('category_recipe_update', {id: category.id}) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                <a href="{{ path('category_recipe_delete', {id: category.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     {% endfor %}
