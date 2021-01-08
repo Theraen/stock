@@ -107,11 +107,11 @@ class RecipeController extends AbstractController
                 $error++;
                 $this->addFlash("danger", $messageEmptyNbPerson);
             }
-            if(empty($recipe->getPreparationTime())) {
+            if($recipe->getPreparationTime() < 0) {
                 $error++;
                 $this->addFlash("danger", $messageEmptyPreparationTime);
             }
-            if(empty($recipe->getCookingTime())) {
+            if($recipe->getCookingTime() < 0) {
                 $error++;
                 $this->addFlash("danger", $messageEmptyCookingTime);
             }
