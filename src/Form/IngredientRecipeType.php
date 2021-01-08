@@ -37,8 +37,11 @@ class IngredientRecipeType extends AbstractType
                 'required' => true,
                 'label' => $this->translator->trans('Unit of measure'),
                 'choices' => [
-                    'CC' => 'cc',
-                    'CS' => 'cs',
+                    $this->translator->trans('gram') => $this->translator->trans('gram'),
+                    $this->translator->trans('unit') => $this->translator->trans('unit'),
+                    $this->translator->trans('tablespoon') => $this->translator->trans('tablespoon'),
+                    $this->translator->trans('teaspoon') => $this->translator->trans('teaspoon'),
+                    $this->translator->trans('pinch') => $this->translator->trans('pinch'),
                 ]
             ])
             ->add('optional', CheckboxType::class, [
