@@ -4,35 +4,201 @@
 
 {% block body %}
 
-    <div class="card mb-4 py-3 border-left-info">
-        <div class="card-body">
-            <h1 class="d-inline-block">{{ recipe.name }}</h1>           
-        </div>
-    </div>
+    <main>
+        <header class="page-header page-header-compact page-header-light border-bottom bg-white">
+            <div class="container-fluid">
+                <div class="page-header-content">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto mb-3">
+                            <h1 class="page-header-title pt-3">
+                                {{ recipe.name }}
+                            </h1>
+                            
+                        </div>
 
-    <div class="row">
-
-        <div class="col-lg-12">
-            <div class="row">
-
-                <div class="card">
-                    <img src="{{ asset('uploads/picture/recipe/' ~ recipe.picture) }}" alt="" width="100%">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ recipe.name}}</h5>
-                        <a href="{{ path('recipe_update', {id: recipe.id}) }}" class="btn btn-warning float-right"><i class="fas fa-edit"></i></a>
-                        <a href="{{ path('recipe_delete', {id: recipe.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                        
                     </div>
                 </div>
-                
             </div>
-            
+        </header>
+        <!-- Main page content-->
+        <div class="container-fluid mt-4">  
 
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- ROW cook, prepa, person -->
+                    <div class="row">
+                        <!-- Nb person -->
+                        <div class="col-lg-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                {% trans %}Nomber of person{% endtrans %}
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                {{ recipe.nbPerson }}
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END nb person -->
+                        <!-- Preparation time -->
+                        <div class="col-lg-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                {% trans %}Preparation time{% endtrans %}
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ preparationTime }}</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-stopwatch fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Preparation time -->
+                        <!-- Cooking time -->
+                        <div class="col-lg-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                {% trans %}Cooking time{% endtrans %}
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ cookingTime }}</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-fire fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Cooking time -->
+                    </div>
+                    <!-- END ROW cook, prepa, person -->
+                </div>
+            </div> 
+
+            <div class="row">
             
-            
-            
+                <div class="col-lg-3">
+                    <div 
+                    class="row d-none d-xs-none d-sm-none d-md-none d-lg-flex mt-4 mr-2"
+                    style="height: 30vh; background-image : url('{{ asset('uploads/picture/recipe/' ~ recipe.picture) }}'); background-repeat: no-repeat; background-size: cover;">
+
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg">
+                            <div class="card shadow mb-4 mt-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">
+                                        <i class="fas fa-carrot mr-2"></i>
+                                        {% trans %}Ingredients{% endtrans %}
+                                    </h6>
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        {% for ingredient in recipe.ingredients  %}
+                                            <li class="list-group-item">
+                                                {{ ingredient.unit }} 
+                                                {% if ingredient.unitMeasure != 'u' %}
+                                                    {{ ingredient.unitMeasure }}
+                                                {% endif %}
+                                                {{ ingredient }}
+                                                {% if ingredient.optional %}
+                                                    ({% trans %}Optional{% endtrans %})
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- col-9 -->
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card shadow mb-4 mt-4">
+                                <div class="card-header py-3">
+                                    
+                                    <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-clipboard-list mr-2"></i>{% trans %}Steps of preparation{% endtrans %}</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        {% for preparation in recipe.preparations  %}
+                                            <li class="list-group-item"> {{ preparation }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="row d-none d-xs-none d-sm-none d-md-none d-lg-block">
+                                <div class="col-lg">
+                                    <div class="card shadow mb-4 mt-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-folder-open mr-2"></i>{% trans %}Categories{% endtrans %}</h6>
+                                        </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            {% for category in recipe.categoryRecipes  %}
+                                                <li class="list-group-item"> {{ category }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row d-none d-xs-none d-sm-none d-md-none d-lg-block">
+                            <div class="col-lg">
+                                <div class="card shadow mb-4 mt-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-sticky-note mr-2"></i>{% trans %}Notes{% endtrans %}</h6>
+                                    </div>
+                                    <div class="card-body">
+
+                                     {{ form_start(formNote) }}
+                                        {{ form_row(formNote.note) }}
+                                        <button class="btn btn-block btn-success" type="submit">{% trans %}Save{% endtrans %}</button>
+                                    {{ form_end(formNote) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>      
+                </div>
+                    
+                    
+
+                <!-- END Col-9 -->
+            </div>                  
         </div>
-    
-    </div>
+    </main>
     
 
 {% endblock %}
+
+    {% block javascripts %}
+        <script src="{{ asset('js/custom.js') }}"></script>
+    {% endblock %}
+

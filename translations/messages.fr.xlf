@@ -671,6 +671,70 @@
         <source>Your email address is not validated. Please click on the link in the confirmation email.</source>
         <target>Votre adresse email n’est pas validée. Veuillez cliquer sur le lien dans l’email de confirmation.</target>
       </trans-unit>
+      <trans-unit id="LSIlxgI" resname="You must associate the recipe has at least one category.">
+        <source>You must associate the recipe has at least one category.</source>
+        <target>Vous devez associer la recette a au moins une catégorie.</target>
+      </trans-unit>
+      <trans-unit id="T1mOlBk" resname="You must fill in the number of person.">
+        <source>You must fill in the number of person.</source>
+        <target>Vous devez indiquer le nombre de personnes.</target>
+      </trans-unit>
+      <trans-unit id="PhC1NIW" resname="You must enter the preparation time. If there is no preparation time, enter the value 0.">
+        <source>You must enter the preparation time. If there is no preparation time, enter the value 0.</source>
+        <target>Vous devez entrer le temps de préparation. S’il n’y a pas de temps de préparation, entrez la valeur 0.</target>
+      </trans-unit>
+      <trans-unit id=".Tuo7X9" resname="You must enter the cooking time. If there is none, enter the value 0.">
+        <source>You must enter the cooking time. If there is none, enter the value 0.</source>
+        <target>Vous devez entrer le temps de cuisson. S’il n’y en a pas, entrez la valeur 0.</target>
+      </trans-unit>
+      <trans-unit id="x50d3a6" resname="You must fill in an picture">
+        <source>You must fill in an picture</source>
+        <target>Vous devez indiquer une image.</target>
+      </trans-unit>
+      <trans-unit id="6PEw2SO" resname="You must combine at least one ingredient.">
+        <source>You must combine at least one ingredient.</source>
+        <target>Vous devez associer au moins un ingrédient.</target>
+      </trans-unit>
+      <trans-unit id="X841Vm9" resname="You must associate at least one preparation step.">
+        <source>You must associate at least one preparation step.</source>
+        <target>Vous devez associer au moins une étape de préparation.</target>
+      </trans-unit>
+      <trans-unit id="CnRd2Es" resname="Nomber of person">
+        <source>Nomber of person</source>
+        <target>Nombre de personne</target>
+      </trans-unit>
+      <trans-unit id="XRERXiX" resname="Steps of preparation">
+        <source>Steps of preparation</source>
+        <target>Étapes de préparation</target>
+      </trans-unit>
+      <trans-unit id="inUlsUk" resname="Notes">
+        <source>Notes</source>
+        <target>Notes</target>
+      </trans-unit>
+      <trans-unit id="Lk.Y8jg" resname="Recipe categories">
+        <source>Recipe categories</source>
+        <target>Catégories de recette</target>
+      </trans-unit>
+      <trans-unit id="4_R.3TD" resname="Recipes categories">
+        <source>Recipes categories</source>
+        <target>Catégories de recettes</target>
+      </trans-unit>
+      <trans-unit id="kg27JTA" resname="Recipe settings">
+        <source>Recipe settings</source>
+        <target>Paramètres des recettes</target>
+      </trans-unit>
+      <trans-unit id="wwQ8_Cu" resname="Products categories">
+        <source>Products categories</source>
+        <target>Catégories de produits</target>
+      </trans-unit>
+      <trans-unit id="yPhPU4u" resname="minute(s)">
+        <source>minute(s)</source>
+        <target>minute(s)</target>
+      </trans-unit>
+      <trans-unit id="E0Jk36v" resname="hour(s)">
+        <source>hour(s)</source>
+        <target>heure(s)</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

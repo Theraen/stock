@@ -28,6 +28,10 @@ class PreparationRecipe
      */
     private $recipe;
 
+    public function __toString() {
+        return $this->title;
+    }
+
 
     public function getId(): ?int
     {

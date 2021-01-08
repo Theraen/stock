@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Data\SearchRecipe;
 use App\Entity\Recipe;
+use App\Form\AddNoteRecipeType;
 use App\Form\RecipeType;
 use App\Form\SearchRecipeType;
 use App\Repository\CategoryRecipeRepository;
@@ -217,11 +218,11 @@ class RecipeController extends AbstractController
                 $error++;
                 $this->addFlash("danger", $messageEmptyNbPerson);
             }
-            if(empty($recipe->getPreparationTime())) {
+            if($recipe->getPreparationTime() < 0) {
                 $error++;
                 $this->addFlash("danger", $messageEmptyPreparationTime);
             }
-            if(empty($recipe->getCookingTime())) {
+            if($recipe->getCookingTime() < 0) {
                 $error++;
                 $this->addFlash("danger", $messageEmptyCookingTime);
             }
@@ -321,8 +322,66 @@ class RecipeController extends AbstractController
     {
         $recipe = $this->recipeRepository->find($recipeEntity);
 
+        $formNote = $this->createForm(AddNoteRecipeType::class, $recipe);
+
+        if($recipe->getPreparationTime() >= 60) {
+            $preparationTime = $this->calculatateTimeinHour($recipe->getPreparationTime());
+        } else {
+            $preparationTime = $recipe->getPreparationTime() . " " . $this->translator->trans('minute(s)');
+        }
+
+        if($recipe->getCookingTime() >= 60) {
+            $cookingTime = $this->calculatateTimeinHour($recipe->getCookingTime());
+        } else {
+            $cookingTime = $recipe->getCookingTime() . " " . $this->translator->trans('minute(s)');
+        }
+
+        $formNote->handleRequest($request);
+
+        if($formNote->isSubmitted() && $formNote->isValid()) {
+
+            $recipe->setUpdatedAt(new DateTime());
+            $this->em->flush();
+
+            return $this->redirectToRoute('recipe_detail', [
+                'id' => $recipe->getId(),
+            ]);
+
+         }
+
         return $this->render('recipe/detail.html.twig', [
-            'recipe' => $recipe
+            'recipe' => $recipe,
+            'preparationTime' => $preparationTime,
+            'cookingTime' => $cookingTime,
+            'formNote' => $formNote->createView()
         ]);
     }
+
+    public function calculatateTimeinHour($time) {
+
+        $time = $time * 60;
+
+        if($time < 3600) {
+            $hours = 0;
+
+            if($time < 60) {
+                $minutes = 0;
+            } else {
+                $minutes = round($time / 60);
+            }
+        } else {
+            $hours = round($time / 3600);
+            $seconds = round($time % 3600);
+            $minutes = floor($seconds / 60);
+        }
+
+        if($minutes == 0) {
+            $time = $hours . " " . $this->translator->trans('hour(s)');
+        } else {
+            $time = $hours . " " . $this->translator->trans('hour(s)') . " " . $minutes . " " . $this->translator->trans('minute(s)');
+        }
+        return $time;
+
+    }
+
 }
