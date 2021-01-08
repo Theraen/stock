@@ -276,7 +276,7 @@ class RecipeController extends AbstractController
                 }
             }
             foreach ($preparations as $preparation) {
-                if (!$ingredient->getId()) {
+                if (!$preparation->getId()) {
                     $preparation->setRecipe($recipe);
                 }
             }
