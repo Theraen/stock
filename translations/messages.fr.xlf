@@ -735,26 +735,6 @@
         <source>hour(s)</source>
         <target>heure(s)</target>
       </trans-unit>
-      <trans-unit id="yqdRA8U" resname="gram">
-        <source>gram</source>
-        <target>g</target>
-      </trans-unit>
-      <trans-unit id="OFz9vAD" resname="unit">
-        <source>unit</source>
-        <target>u</target>
-      </trans-unit>
-      <trans-unit id="9pIkIS." resname="tablespoon">
-        <source>tablespoon</source>
-        <target>cs</target>
-      </trans-unit>
-      <trans-unit id="eMWHx26" resname="teaspoon">
-        <source>teaspoon</source>
-        <target>cc</target>
-      </trans-unit>
-      <trans-unit id="RvlQSnp" resname="pinch">
-        <source>pinch</source>
-        <target>pincée</target>
-      </trans-unit>
     </body>
   </file>
 </xliff>
