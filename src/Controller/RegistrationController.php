@@ -63,6 +63,7 @@ class RegistrationController extends AbstractController
                 )
             );
             $user->addRoles('ROLE_USER');
+            $user->setLang('en');
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();

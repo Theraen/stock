@@ -755,6 +755,58 @@
         <source>pinch</source>
         <target>pincée</target>
       </trans-unit>
+      <trans-unit id="FuZxXvu" resname="Old password does not match.">
+        <source>Old password does not match.</source>
+        <target>L’ancien mot de passe ne correspond pas.</target>
+      </trans-unit>
+      <trans-unit id="isdgmcx" resname="Current Password">
+        <source>Current Password</source>
+        <target>Mot de passe actuel</target>
+      </trans-unit>
+      <trans-unit id="YXZ26gK" resname="Please enter a password">
+        <source>Please enter a password</source>
+        <target>Veuillez entrer un mot de passe</target>
+      </trans-unit>
+      <trans-unit id=".esazsm" resname="Your password should be at least {{ limit }} characters">
+        <source>Your password should be at least {{ limit }} characters</source>
+        <target>Votre mot de passe doit contenir au moins {{ limit }} caractères</target>
+      </trans-unit>
+      <trans-unit id="PdnfREH" resname="New password">
+        <source>New password</source>
+        <target>Nouveau mot de passe</target>
+      </trans-unit>
+      <trans-unit id="WsJl85a" resname="Confirm password">
+        <source>Confirm password</source>
+        <target>Confirmer le mot de passe</target>
+      </trans-unit>
+      <trans-unit id="TdLhlyP" resname="The password fields must match.">
+        <source>The password fields must match.</source>
+        <target>Les champs de mot de passe doivent correspondre.</target>
+      </trans-unit>
+      <trans-unit id="WcqLDxg" resname="Account settings - Security">
+        <source>Account settings - Security</source>
+        <target>Paramètres du compte - Sécurité</target>
+      </trans-unit>
+      <trans-unit id="j2_0639" resname="Security">
+        <source>Security</source>
+        <target>Sécurité</target>
+      </trans-unit>
+      <trans-unit id="qUn0YjB" resname="Change Password">
+        <source>Change Password</source>
+        <target>Changer le mot de passe</target>
+      </trans-unit>
+      <trans-unit id="W0OvAgg" resname="Account settings - Profile">
+        <source>Account settings - Profile</source>
+        <target>Paramètres du compte - Profil</target>
+      </trans-unit>
+      <trans-unit id="Pa4DfKD" resname="Account Details">
+        <source>Account Details</source>
+        <target>Détails du compte</target>
+      </trans-unit>
+      <trans-unit id="e22sKZi" resname="your password has been updated.">
+        <source>Your password has been updated.</source>
+        <target>Votre mot de passe a été mis à jour.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

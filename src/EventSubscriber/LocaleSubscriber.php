@@ -2,21 +2,27 @@
 
 namespace App\EventSubscriber;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
+use Symfony\Component\Security\Core\User\UserInterface;
 
-class LocaleSubscriber implements EventSubscriberInterface
+class LocaleSubscriber extends AbstractController implements EventSubscriberInterface
 {
     private $defaultLocale;
+
+
 
     public function __construct($defaultLocale = 'en')
     {
         $this->defaultLocale = $defaultLocale;
+
     }
 
     public function onKernelRequest(RequestEvent $event)
     {
+        
         $request = $event->getRequest();
         if (!$request->hasPreviousSession()) {
             return;

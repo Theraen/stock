@@ -289,7 +289,9 @@ class RecipeController extends AbstractController
 
             $this->em->flush();
 
-            return $this->redirectToRoute('recipe_list');
+            return $this->redirectToRoute('recipe_detail', [
+                'id' => $recipe->getId()
+            ]);
         }
 
         return $this->render('recipe/form.html.twig', [
