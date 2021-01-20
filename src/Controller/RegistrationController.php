@@ -28,7 +28,8 @@ class RegistrationController extends AbstractController
         $this->translator = $translator;
     }
 
-    public function verifEmail($email) {
+    public function verifEmail($email)
+    {
         list($username, $domain) = explode('@', $email, 2);
 
         return checkdnsrr($domain, 'MX');
@@ -47,7 +48,7 @@ class RegistrationController extends AbstractController
 
             //dd($this->verifEmail($user->getEmail()));
 
-            if(!$this->verifEmail($user->getEmail())) {
+            if (!$this->verifEmail($user->getEmail())) {
 
                 $messageEmailDomain = $this->translator->trans('The email address domain does not exist. Please enter a valid email address.');
 
@@ -63,7 +64,6 @@ class RegistrationController extends AbstractController
                 )
             );
             $user->addRoles('ROLE_USER');
-            $user->setLang('en');
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
@@ -71,7 +71,9 @@ class RegistrationController extends AbstractController
             $messageConfirmMail = $this->translator->trans('Please confirm your email address');
 
             // generate a signed url and email it to the user
-            $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
+            $this->emailVerifier->sendEmailConfirmation(
+                'app_verify_email',
+                $user,
                 (new TemplatedEmail())
                     ->from(new Address('cook@quentin.dev', 'Cook Bot'))
                     ->to($user->getEmail())
