@@ -804,8 +804,24 @@
         <target>Détails du compte</target>
       </trans-unit>
       <trans-unit id="e22sKZi" resname="your password has been updated.">
-        <source>Your password has been updated.</source>
+        <source>your password has been updated.</source>
         <target>Votre mot de passe a été mis à jour.</target>
+      </trans-unit>
+      <trans-unit id="zCRKkGL" resname="Your password has been updated.">
+        <source>Your password has been updated.</source>
+        <target>Votre mot de passe a été modifié.</target>
+      </trans-unit>
+      <trans-unit id="FtsQsoS" resname="kilogram">
+        <source>kilogram</source>
+        <target>kg</target>
+      </trans-unit>
+      <trans-unit id="wY46yyn" resname="centiliter">
+        <source>centiliter</source>
+        <target>cl</target>
+      </trans-unit>
+      <trans-unit id="A9kqbit" resname="liter">
+        <source>liter</source>
+        <target>l</target>
       </trans-unit>
     </body>
   </file>

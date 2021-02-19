@@ -17,11 +17,12 @@ class IngredientRecipeType extends AbstractType
 
     private $translator;
 
-    public function __construct(TranslatorInterface $translator) {
+    public function __construct(TranslatorInterface $translator)
+    {
         $this->translator = $translator;
     }
-    
-    
+
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -30,14 +31,18 @@ class IngredientRecipeType extends AbstractType
                 'label' => $this->translator->trans('Ingredient name'),
             ])
             ->add('unit', IntegerType::class, [
-                'required' => true,
+                'required' => false,
                 'label' => $this->translator->trans('Quantity'),
             ])
             ->add('unit_measure', ChoiceType::class, [
-                'required' => true,
+                'required' => false,
                 'label' => $this->translator->trans('Unit of measure'),
                 'choices' => [
+                    '' => '',
                     $this->translator->trans('gram') => $this->translator->trans('gram'),
+                    $this->translator->trans('kilogram') => $this->translator->trans('kilogram'),
+                    $this->translator->trans('centiliter') => $this->translator->trans('centiliter'),
+                    $this->translator->trans('liter') => $this->translator->trans('liter'),
                     $this->translator->trans('unit') => $this->translator->trans('unit'),
                     $this->translator->trans('tablespoon') => $this->translator->trans('tablespoon'),
                     $this->translator->trans('teaspoon') => $this->translator->trans('teaspoon'),
@@ -47,8 +52,7 @@ class IngredientRecipeType extends AbstractType
             ->add('optional', CheckboxType::class, [
                 'label' => $this->translator->trans('Optional'),
                 'required' => false,
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
